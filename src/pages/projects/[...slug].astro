@@ -1,0 +1,106 @@
+---
+import { Image } from "astro:assets";
+import { type CollectionEntry, getCollection } from "astro:content";
+import PageLayout from "../../layout/PageLayout.astro";
+import Github from "../../assets/images/icons/contact/Github.astro";
+import ExternalLink from "../../assets/images/icons/ExternalLink.astro";
+import BackArrow from "../../assets/images/icons/BackArrow.astro";
+import TechTag from "../../components/TechTag.astro";
+import Button from "../../components/Button.astro";
+import Heading from "../../components/Heading.astro";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: project,
+  }));
+}
+
+const project = Astro.props as CollectionEntry<"projects">;
+const viewTransitionName = project.data.title;
+const { Content } = await project.render();
+---
+
+<PageLayout>
+  <main>
+    <a
+      href="/"
+      class="group absolute left-4 top-4 z-10 grid rounded-full border-slate-950 bg-neutral-200/40 p-2 shadow transition-all hover:bg-neutral-100/60 hover:shadow-lg"
+    >
+      <BackArrow class="aspect-square w-8 stroke-slate-950" />
+    </a>
+    <div class="mx-2 mt-4">
+      <Image
+        src={project.data.image.src}
+        alt={project.data.image.alt}
+        class="max-h-80 w-full rounded-lg object-cover"
+        transition:name={`${viewTransitionName}-img`}
+      />
+    </div>
+    <div class="m-4 grid gap-4 border-b-2 border-slate-400 pb-4">
+      <Heading
+        level="h1"
+        class="text-neutral-100"
+        applyGradient={false}
+        transition:name={`${viewTransitionName}-title`}
+      >
+        {project.data.title}
+      </Heading>
+
+      <div class="flex gap-4">
+        {
+          project.data.tags.map((tag) => (
+            <p class="text-xs [text-wrap:balance]">{tag}</p>
+          ))
+        }
+      </div>
+    </div>
+    <section class="m-4 flex flex-col-reverse gap-8 sm:grid sm:grid-cols-4">
+      <article
+        class="prose col-span-3 prose-h2:text-slate-200 prose-p:text-slate-400 prose-a:text-emerald-600"
+      >
+        <Content />
+      </article>
+      <aside class="col-span-1 flex flex-col gap-8 sm:gap-16">
+        <section class="flex flex-col gap-4">
+          <Heading level="h2" applyGradient={false} class="text-xl">
+            Made with
+          </Heading>
+          <ul class="flex flex-wrap gap-2">
+            {
+              project.data.stack.map((tech) => (
+                <li>
+                  <TechTag {tech} size="sm" />
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+        <div class="flex gap-4 md:flex-col">
+          <Button
+            href={project.data.github}
+            type="secondary"
+            class="group w-full border-emerald-400 p-2"
+          >
+            View Source <Github
+              class="hidden aspect-square w-8 fill-emerald-400 sm:block"
+            />
+          </Button>
+          {
+            project.data.demo && (
+              <Button
+                href={project.data.demo}
+                type="primary"
+                class="group w-full p-2"
+              >
+                Live Website
+                <ExternalLink class="hidden aspect-square w-8 transition-all group-hover:fill-emerald-400 sm:block" />
+              </Button>
+            )
+          }
+        </div>
+      </aside>
+    </section>
+  </main>
+</PageLayout>

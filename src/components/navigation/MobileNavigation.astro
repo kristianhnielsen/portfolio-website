@@ -1,0 +1,60 @@
+---
+import Hamburger from "./Hamburger.astro";
+import NavLink from "./NavLink.astro";
+import { primaryNavigation } from "./links";
+---
+
+<nav
+  id="mobile-navigation"
+  data-visible="false"
+  aria-label="navigation"
+  class="absolute right-0 top-16 z-20 w-screen border-b-2 border-slate-800 bg-slate-950 p-8 transition-all duration-300 data-[visible='false']:-translate-y-[130%] data-[visible='true']:translate-y-0 sm:hidden"
+  transition:persist
+>
+  <ul class="flex flex-col items-end gap-8">
+    {
+      // New links must be added in links.ts
+      primaryNavigation.map((link) => (
+        <li>
+          <NavLink class="text-lg" href={link.href}>
+            {link.text}
+          </NavLink>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+<Hamburger />
+
+<script>
+  const hamburgerButton = document.querySelector("#hamburger");
+  const navigation = document.querySelector("#mobile-navigation");
+  const navLinks = document.querySelectorAll("nav > ul > li > a");
+
+  function hide() {
+    navigation?.setAttribute("data-visible", "false");
+    hamburgerButton?.setAttribute("aria-expanded", "false");
+  }
+
+  function show() {
+    navigation?.setAttribute("data-visible", "true");
+    hamburgerButton?.setAttribute("aria-expanded", "true");
+  }
+
+  // Set state after View Transition animation
+  document.addEventListener("astro:after-swap", () => hide());
+
+  // All navigation links in hamburger menu closes the menu when clicked
+  navLinks.forEach((link) => link.addEventListener("click", hide));
+
+  // Hamburger menu button - open/close toggle
+  hamburgerButton?.addEventListener("click", () => {
+    const visibility = navigation?.getAttribute("data-visible");
+
+    if (visibility === "false") {
+      show();
+    } else if (visibility === "true") {
+      hide();
+    }
+  });
+</script>

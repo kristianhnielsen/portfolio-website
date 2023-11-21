@@ -1,0 +1,118 @@
+---
+import { Image } from "astro:assets";
+import type { HTMLAttributes } from "astro/types";
+import { twMerge } from "tailwind-merge";
+
+import JavascriptIcon from "../assets/images/icons/tech/javascript.svg";
+import TypescriptIcon from "../assets/images/icons/tech/typescript.svg";
+import TailwindIcon from "../assets/images/icons/tech/tailwind.svg";
+import ScssIcon from "../assets/images/icons/tech/scss.svg";
+import AstroIcon from "../assets/images/icons/tech/astro.svg";
+import HtmlIcon from "../assets/images/icons/tech/html.svg";
+import SanityIcon from "../assets/images/icons/tech/sanity.svg";
+import PythonIcon from "../assets/images/icons/tech/python.svg";
+import CSSIcon from "../assets/images/icons/tech/css.svg";
+import ReactIcon from "../assets/images/icons/tech/react.svg";
+import FigmaIcon from "../assets/images/icons/tech/figma.svg";
+import NextIcon from "../assets/images/icons/tech/next.svg";
+import NodeIcon from "../assets/images/icons/tech/node-js.svg";
+import RPiIcon from "../assets/images/icons/tech/raspberry-pi.svg";
+import JavaIcon from "../assets/images/icons/tech/java.svg";
+import GodotIcon from "../assets/images/icons/tech/godot.svg";
+import GitIcon from "../assets/images/icons/tech/git.svg";
+
+export interface Props extends HTMLAttributes<"div"> {
+  tech:
+    | "Javascript"
+    | "Typescript"
+    | "Tailwind"
+    | "SCSS"
+    | "Astro"
+    | "HTML"
+    | "Sanity"
+    | "CSS"
+    | "React"
+    | "Python"
+    | "Java"
+    | "Raspberry Pi"
+    | "Next"
+    | "Node"
+    | "Godot"
+    | "Git"
+    | "Figma"
+    | "Database"
+    | "Auth"
+    | "Fullstack"
+    | string;
+
+  size: "xs" | "sm" | "md" | "lg";
+}
+const { tech, size, class: className, ...props } = Astro.props;
+
+const findIcon = (tech: string) => {
+  switch (tech.toLowerCase()) {
+    case "javascript":
+      return JavascriptIcon;
+    case "typescript":
+      return TypescriptIcon;
+    case "tailwind":
+      return TailwindIcon;
+    case "scss":
+      return ScssIcon;
+    case "astro":
+      return AstroIcon;
+    case "html":
+      return HtmlIcon;
+    case "sanity":
+      return SanityIcon;
+    case "python":
+      return PythonIcon;
+    case "css":
+      return CSSIcon;
+    case "react":
+      return ReactIcon;
+    case "java":
+      return JavaIcon;
+    case "raspberry pi":
+      return RPiIcon;
+    case "next":
+      return NextIcon;
+    case "git":
+      return GitIcon;
+    case "godot":
+      return GodotIcon;
+    case "figma":
+      return FigmaIcon;
+    case "node":
+      return NodeIcon;
+    default:
+      return HtmlIcon;
+  }
+};
+---
+
+<div
+  class={twMerge(
+    "flex gap-2 p-2 rounded-lg text-center text-neutral-100 text-sm transition-all items-center w-fit",
+    size === "sm" && "text-xs",
+    size === "xs" && "text-xs",
+    size === "lg" && "text-xs md:text-sm",
+    className,
+  )}
+  {...props}
+>
+  <Image
+    src={findIcon(tech)}
+    alt={`${tech} icon`}
+    class={twMerge(
+      "aspect-square",
+      size === "xs" && "w-4",
+      size === "sm" && "w-8",
+      size === "md" && "w-12",
+      size === "lg" && "w-8 sm:w-16",
+    )}
+  />
+  <p>
+    {tech}
+  </p>
+</div>

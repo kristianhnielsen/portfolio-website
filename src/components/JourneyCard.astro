@@ -1,0 +1,118 @@
+---
+import { twMerge } from "tailwind-merge";
+import TechTag from "./TechTag.astro";
+import Database from "../assets/images/icons/tech/Database.astro";
+import CablesConnect from "../assets/images/icons/tech/CablesConnect.astro";
+import Auth from "../assets/images/icons/tech/Auth.astro";
+import SectionConnectLine from "./SectionConnectLine.astro";
+
+interface Props {
+  techTags: string[];
+  isTextRight: boolean;
+  lineVariation?: "curve" | "tornado" | "loop";
+}
+
+const { techTags, isTextRight, lineVariation, ...props } = Astro.props;
+---
+
+<article class="grid place-items-center gap-2 md:grid-cols-2">
+  <div
+    class={twMerge(
+      "flex flex-wrap justify-center gap-4",
+      !isTextRight && "order-last",
+    )}
+  >
+    {
+      techTags.map((techTag) => {
+        switch (techTag) {
+          case "Database":
+            return (
+              <p class="anim-flip group flex w-fit flex-col items-center gap-2 rounded-lg border-2 border-emerald-800 p-2 text-center transition-all hover:border-emerald-400 hover:bg-slate-900 group-hover:text-neutral-100">
+                <Database class="aspect-square w-12 fill-none stroke-emerald-400 stroke-[1] px-2 text-xs transition-all group-hover:fill-emerald-400 group-hover:stroke-none md:w-24 md:text-sm" />
+                Databases
+              </p>
+            );
+          case "Fullstack":
+            return (
+              <p class="anim-flip group flex w-fit flex-col items-center gap-2 rounded-lg border-2 border-emerald-800 p-2 text-center transition-all hover:border-emerald-400 hover:bg-slate-900 group-hover:text-neutral-100">
+                <CablesConnect class="aspect-square w-12 fill-none stroke-emerald-400 stroke-[1] px-2 text-xs transition-all group-hover:fill-emerald-400 group-hover:stroke-none md:w-24 md:text-sm" />
+                Fullstack
+              </p>
+            );
+          case "Auth":
+            return (
+              <p class="anim-flip group flex w-fit flex-col items-center gap-2 rounded-lg border-2 border-emerald-800 p-2 text-center transition-all hover:border-emerald-400 hover:bg-slate-900 group-hover:text-neutral-100">
+                <Auth class="aspect-square w-12 fill-none stroke-emerald-400 stroke-[1] px-2 text-xs transition-all group-hover:fill-emerald-400 group-hover:stroke-none md:w-24 md:text-sm" />
+                Auth
+              </p>
+            );
+          default:
+            return (
+              <TechTag
+                size="lg"
+                tech={techTag}
+                class="flex-col border-2 border-emerald-800 hover:border-emerald-400 hover:bg-slate-900"
+              />
+            );
+        }
+      })
+    }
+  </div>
+  <div
+    class={twMerge(
+      "flex flex-col gap-4 rounded-lg bg-slate-900 p-4",
+      isTextRight && "anim-highlight-right",
+      !isTextRight && "anim-highlight-left",
+    )}
+  >
+    <slot />
+  </div>
+</article>
+{
+  lineVariation && (
+    <SectionConnectLine variation={lineVariation} leftToRight={!isTextRight} />
+  )
+}
+
+<style>
+  .anim-highlight-right {
+    animation: highlight-right linear both;
+    animation-timeline: view(block);
+    animation-range: contain 15% contain 30%;
+  }
+  .anim-highlight-left {
+    animation: highlight-left linear both;
+    animation-timeline: view();
+    animation-range: contain 15% contain 30%;
+  }
+
+  @keyframes highlight-right {
+    100% {
+      border-right-color: #34d399;
+      border-right-width: 16px;
+    }
+  }
+  @keyframes highlight-left {
+    100% {
+      border-left-color: #34d399;
+      border-left-width: 16px;
+    }
+  }
+
+  /* .anim-flip {
+    animation: flip linear both;
+    animation-timeline: view(block);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    animation-range: contain 0% contain 30%;
+  }
+
+  @keyframes flip {
+    0% {
+      transform: rotateY(180deg);
+    }
+    100% {
+      transform: rotateY(0deg);
+    }
+  } */
+</style>

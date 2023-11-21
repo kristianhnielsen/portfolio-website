@@ -1,0 +1,61 @@
+---
+import Heading from "../components/Heading.astro";
+import PageLayout from "../layout/PageLayout.astro";
+import Email from "../assets/images/icons/contact/Email.astro";
+import Github from "../assets/images/icons/contact/Github.astro";
+import LinkedIn from "../assets/images/icons/contact/LinkedIn.astro";
+import Person from "../assets/images/icons/contact/Person.astro";
+---
+
+<PageLayout>
+  <main class="mx-4 mt-24 grid justify-center gap-8 md:grid-cols-2">
+    <div class="flex flex-col items-center gap-4">
+      <Heading level="h1" class="">Contact</Heading>
+      <p>Don't hesitate to contact me!</p>
+    </div>
+    <address class="grid gap-8 not-italic">
+      <ul class="flex flex-col gap-8">
+        <li>
+          <p
+            class="group flex items-center gap-4 transition-all hover:text-neutral-100"
+          >
+            <Person
+              class="w-12 stroke-emerald-800 stroke-2 transition-all group-hover:stroke-emerald-400"
+            />Kristian Hviid Nielsen
+          </p>
+        </li>
+        <li>
+          <a
+            href="mailto:hello@kristiannielsen.com"
+            class="group flex items-center gap-4 [word-break:break-word] hover:text-neutral-100"
+            ><Email
+              class="w-12 fill-emerald-800 transition-all group-hover:fill-emerald-400"
+            />hello@kristiannielsen.com</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://github.com/kristianhnielsen/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex items-center gap-4 hover:text-neutral-100"
+            ><Github
+              class="w-12 fill-emerald-800 p-1 transition-all group-hover:fill-emerald-400"
+            />@kristianhnielsen</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/kristian-hviid-nielsen/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex items-center gap-4 hover:text-neutral-100"
+            ><LinkedIn
+              class="w-12 fill-emerald-800 transition-all group-hover:fill-emerald-400"
+            />/in/kristian-hviid-nielsen</a
+          >
+        </li>
+      </ul>
+    </address>
+  </main>
+</PageLayout>

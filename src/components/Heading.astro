@@ -1,0 +1,52 @@
+---
+import { type HTMLAttributes } from "astro/types";
+import { twMerge } from "tailwind-merge";
+
+export interface Props extends HTMLAttributes<"div"> {
+  level: "h1" | "h2" | "h3";
+  applyGradient?: boolean;
+}
+
+const { level, applyGradient = true, class: className, ...props } = Astro.props;
+const gradientStyles =
+  "w-fit bg-gradient-to-tr from-emerald-800 to-emerald-400 bg-clip-text text-transparent";
+---
+
+{
+  (level === "h1" && (
+    <h1
+      class={twMerge(
+        applyGradient && gradientStyles,
+        "text-3xl font-bold md:text-5xl",
+        className,
+      )}
+      {...props}
+    >
+      <slot />
+    </h1>
+  )) ||
+    (level === "h2" && (
+      <h2
+        class={twMerge(
+          applyGradient && gradientStyles,
+          "place-self-center text-3xl font-bold",
+          className,
+        )}
+        {...props}
+      >
+        <slot />
+      </h2>
+    )) ||
+    (level === "h3" && (
+      <h3
+        class={twMerge(
+          applyGradient && gradientStyles,
+          "place-self-center text-xl font-bold",
+          className,
+        )}
+        {...props}
+      >
+        <slot />
+      </h3>
+    ))
+}

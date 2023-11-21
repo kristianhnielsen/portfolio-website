@@ -1,0 +1,69 @@
+---
+import { twMerge } from "tailwind-merge";
+
+interface Props {
+  leftToRight?: boolean;
+  variation?: "curve" | "tornado" | "loop";
+}
+
+const { leftToRight, variation } = Astro.props;
+const className = twMerge(
+  "draw-line-anim stroke-[6] w-4/5 md:h-80 stroke-emerald-400 place-self-center fill-none",
+  !leftToRight && "-scale-x-100",
+);
+---
+
+{
+  (variation == "curve" && (
+    <svg
+      class={className}
+      viewBox="0 0 496 375"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M27.3301 10C-104.275 279.5 559.455 69.5 478.932 365"
+        stroke-linecap="round"
+      />
+    </svg>
+  )) ||
+    (variation == "loop" && (
+      <svg
+        class={className}
+        viewBox="0 0 492 375"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19.0261 10C-47.881 147.012 281.93 179 197 72C112.07 -35.0001 59.9922 260.67 282.562 135.335C505.131 10 492.313 285.422 470.628 365"
+          stroke-linecap="round"
+        />
+      </svg>
+    )) ||
+    (variation == "tornado" && (
+      <svg
+        class={className}
+        viewBox="0 0 488 376"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10 10.0146C150.226 9.03795 585.5 57.5 452.5 67.7193C319.5 77.9385 113.5 70 368.5 101.5C412.107 106.887 549.5 127.5 368.5 149.5C147 176.423 415.565 324.664 461.602 365.015"
+          stroke-linecap="round"
+        />
+      </svg>
+    ))
+}
+
+<style>
+  .draw-line-anim > path {
+    animation: draw linear both;
+    animation-timeline: view(block);
+    animation-range: contain 20% contain 50%;
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+  }
+
+  @keyframes draw {
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+</style>

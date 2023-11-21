@@ -1,0 +1,20 @@
+---
+import InterestCardLayout from "../../../../layout/InterestCardLayout.astro";
+import { twMerge } from "tailwind-merge";
+
+const props = Astro.props;
+---
+
+<InterestCardLayout title="Tailwind" {...props}>
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M9,13.7q1.4-5.6,7-5.6c5.6,0,6.3,4.2,9.1,4.9q2.8.7,4.9-2.1-1.4,5.6-7,5.6c-5.6,0-6.3-4.2-9.1-4.9Q11.1,10.9,9,13.7ZM2,22.1q1.4-5.6,7-5.6c5.6,0,6.3,4.2,9.1,4.9q2.8.7,4.9-2.1-1.4,5.6-7,5.6c-5.6,0-6.3-4.2-9.1-4.9Q4.1,19.3,2,22.1Z"
+      class={twMerge(
+        "transition-all stroke-1",
+        "group-hover:fill-sky-400 group-hover:stroke-none",
+        "group-data-[highlighted]:fill-sky-400 group-data-[highlighted]:stroke-none",
+      )}
+    >
+    </path>
+  </svg>
+</InterestCardLayout>

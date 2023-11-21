@@ -1,0 +1,55 @@
+---
+import SocialMediaImage from "../../assets/images/social poster.png";
+
+const name = "Kristian Nielsen - Frontend Developer";
+const locale = "en";
+const type = "website";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const image = {
+  src: new URL(SocialMediaImage.src, Astro.url),
+  alt: "Kristian Nielsen - Frontend Developer poster",
+};
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+
+const formatTitle = (title: string) =>
+  title === undefined ? name : `${name} | ${title}`;
+
+const ensureTrailingSlash = (url: string | URL) =>
+  url.toString().replace(/\/$/, "") + "/";
+---
+
+<!-- Metadata -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="canonical" href={ensureTrailingSlash(canonicalURL)} />
+<meta name="description" content={description} />
+<meta name="generator" content={Astro.generator} />
+<link rel="sitemap" href="/sitemap-0.xml" />
+<title>
+  {formatTitle(title)}
+</title>
+
+<!-- OpenGraph Tags -->
+<meta property="og:title" content={formatTitle(title)} />
+<meta property="og:type" content={type} />
+<meta property="og:url" content={ensureTrailingSlash(canonicalURL)} />
+<meta property="og:locale" content={locale} />
+<meta property="og:description" content={description} />
+<meta property="og:site_name" content={name} />
+<meta property="og:image" content={image.src} />
+<meta property="og:image:alt" content={image.alt} />
+
+<!-- Twitter Tags -->
+<meta name="twitter:card" content={"summary_large_image"} />
+<meta name="twitter:title" content={formatTitle(title)} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={image.src} />
+<meta name="twitter:image:alt" content={image.alt} />

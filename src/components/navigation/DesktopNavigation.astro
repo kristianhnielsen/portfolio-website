@@ -1,0 +1,19 @@
+---
+import NavLink from "./NavLink.astro";
+import { primaryNavigation } from "./links";
+---
+
+<nav class="hidden sm:block">
+  <ul class="flex gap-8">
+    {
+      // New links must be added in links.ts
+      primaryNavigation.map((link) => (
+        <li>
+          <NavLink href={link.href} cta={link.cta}>
+            {link.text}
+          </NavLink>
+        </li>
+      ))
+    }
+  </ul>
+</nav>

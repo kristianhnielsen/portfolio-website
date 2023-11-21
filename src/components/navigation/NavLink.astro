@@ -1,0 +1,22 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { twMerge } from "tailwind-merge";
+
+interface Props extends HTMLAttributes<"a"> {
+  cta?: boolean;
+}
+
+const { cta, class: className, ...props } = Astro.props;
+---
+
+<a
+  {...props}
+  class={twMerge(
+    "hover:text-emerald-400 hover:underline transition-all ",
+    className,
+    cta &&
+      "py-2 px-4 bg-emerald-400 text-slate-950 rounded-lg hover:bg-slate-950 border-2 border-slate-950 hover:border-emerald-400",
+  )}
+>
+  <slot />
+</a>

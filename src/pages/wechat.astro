@@ -1,0 +1,20 @@
+---
+import { Image } from "astro:assets";
+import Heading from "../components/Heading.astro";
+import PageLayout from "../layout/PageLayout.astro";
+import WechatQR from "../assets/images/wechatQR.jpg";
+---
+
+<PageLayout>
+  <main class="grid place-items-center gap-8">
+    <Heading level="h1">Wechat</Heading>
+    <address class="grid place-items-center gap-4 not-italic">
+      <p>Search for my ID: <strong>kristiannielsen</strong></p>
+      <Image
+        src={WechatQR}
+        alt=""
+        class="aspect-square max-w-xs place-self-center rounded"
+      />
+    </address>
+  </main>
+</PageLayout>

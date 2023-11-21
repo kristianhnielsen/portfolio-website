@@ -1,0 +1,27 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { Image } from "astro:assets";
+import { twMerge } from "tailwind-merge";
+
+interface Props extends HTMLAttributes<"div"> {
+  image: ImageMetadata;
+  title: string;
+}
+
+const { image, title, class: className, ...props } = Astro.props;
+---
+
+<div
+  class={twMerge(
+    "flex flex-col gap-2 items-center p-2 w-24 md:w-32",
+    className,
+  )}
+  {...props}
+>
+  <Image
+    src={image}
+    alt={`${title} podcast cover art`}
+    class="w-20 rounded-lg object-cover object-center md:w-28"
+  />
+  <p class="text-center text-sm [text-wrap:balance]">{title}</p>
+</div>

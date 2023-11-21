@@ -1,0 +1,289 @@
+---
+import { Image } from "astro:assets";
+import PageLayout from "../layout/PageLayout.astro";
+import Heading from "../components/Heading.astro";
+import MediaCard from "../components/MediaCard.astro";
+import LanguageFlagCard from "../components/LanguageFlagCard.astro";
+import JourneyCard from "../components/JourneyCard.astro";
+import TeachingIcon from "../assets/images/icons/interests/TeachingIcon.astro";
+import ProfileImg from "../assets/images/coffee-yunnan.jpg";
+
+// Podcast Covers
+import SyntaxCover from "../assets/images/media/podcast/syntax.jpg";
+import DataklubbenCover from "../assets/images/media/podcast/dataklubben.jpg";
+import WebRushCover from "../assets/images/media/podcast/webrush.jpg";
+import HtmlCover from "../assets/images/media/podcast/html podcast.png";
+import CompressedCover from "../assets/images/media/podcast/compressed.jpg";
+import GeneralMusingsCover from "../assets/images/media/podcast/general musings.jpg";
+import DarknetDiariesCover from "../assets/images/media/podcast/darknet-diaries.jpg";
+
+// Video Covers
+import CodingInPublicCover from "../assets/images/media/youtube/coding-in-public.jpg";
+import FireshipCover from "../assets/images/media/youtube/fireship.jpg";
+import FreeCodeCampCover from "../assets/images/media/youtube/freecodecamp.jpg";
+import KevinPowellCover from "../assets/images/media/youtube/kevin-powell.jpg";
+import NetNinjaCover from "../assets/images/media/youtube/net-ninja.jpg";
+import NetworkChuckCover from "../assets/images/media/youtube/network-chuck.jpg";
+import WebsiteArchitectCover from "../assets/images/media/youtube/the-website-architect.jpg";
+
+// Social Media Covers
+import RedditIcon from "../assets/images/icons/tech/reddit.svg";
+import DiscordIcon from "../assets/images/icons/tech/discord.svg";
+import WechatIcon from "../assets/images/icons/tech/wechat.svg";
+import DevIcon from "../assets/images/icons/tech/dev.png";
+---
+
+<PageLayout>
+  <main class="mt-24 grid gap-48">
+    <section class="mx-4 grid gap-8 md:grid-cols-2">
+      <article class="flex flex-col gap-8">
+        <Heading level="h1">About Me</Heading>
+        <div class="flex flex-col gap-4">
+          <p>
+            My name is Kristian, I'm from a small town in the tristate area in
+            Denmark.
+          </p>
+          <p>
+            My passion for learning languages led me to study Chinese in
+            Southern China, where I've been living for the past decade.
+          </p>
+        </div>
+      </article>
+      <Image
+        alt=""
+        src={ProfileImg}
+        class="aspect-video place-self-center rounded-lg object-cover object-center shadow-lg"
+      />
+    </section>
+
+    <section class="mx-4 grid gap-8">
+      <Heading level="h2">Languages</Heading>
+      <div class="flex flex-wrap justify-center gap-8">
+        <LanguageFlagCard language="Danish" />
+        <LanguageFlagCard language="English" />
+        <LanguageFlagCard language="Mandarin" />
+        <LanguageFlagCard language="Cantonese" />
+      </div>
+    </section>
+
+    <article class="mx-4 grid gap-8">
+      <Heading level="h2">Teaching</Heading>
+      <article class="grid gap-8 md:grid-cols-2">
+        <div class="flex flex-col items-center gap-4 text-slate-400">
+          <p>
+            I teach Python and web development fundamentals, where my main focus
+            is for my students to get their hands on the keyboard.
+          </p>
+          <p>
+            I believe in closing the mental gap between code on a machine and
+            the real world as fast as possible.
+          </p>
+        </div>
+        <TeachingIcon class="w-32 text-base sm:w-32 md:w-32 lg:w-32" />
+      </article>
+    </article>
+
+    <section class="mx-4 grid gap-8">
+      <Heading level="h2">My Coding Journey</Heading>
+      <div class="grid">
+        <JourneyCard
+          techTags={["Godot", "Java"]}
+          lineVariation="curve"
+          isTextRight={true}
+        >
+          <p>
+            I chose Java as my first programming language. Even "Hello world"
+            gave me headaches.
+          </p>
+          <p>
+            I switched to making games with the Godot game engine, and detoured
+            to learn Python to understand some of the more programatically
+            complex aspects of game dev.
+          </p>
+        </JourneyCard>
+
+        <JourneyCard
+          isTextRight={false}
+          techTags={["Python", "Raspberry Pi", "Git"]}
+          lineVariation="loop"
+        >
+          <p>
+            I got started learning Python with "How To Automate The Boring Stuff
+            with Python".
+          </p>
+          <p>
+            One of my first attempts in automating a task started out simple
+            enough... until scope creep hit me.
+          </p>
+          <p>This ended up as one of my largest projects.</p>
+        </JourneyCard>
+
+        <JourneyCard
+          isTextRight={true}
+          techTags={["HTML", "CSS", "Javascript", "Figma"]}
+          lineVariation="tornado"
+        >
+          <p>
+            With Python, I was able to provide solutions to everyday problems.
+            The issue was, that no one could understand it without an interface.
+          </p>
+          <p>
+            I decided to switch to web development, providing a familiar
+            environment for my users.
+          </p>
+        </JourneyCard>
+
+        <JourneyCard
+          isTextRight={false}
+          techTags={["Node", "React", "Next"]}
+          lineVariation="loop"
+        >
+          <p>
+            After powering through the basics, I confidently jumped into React
+            and Next soon after.
+          </p>
+          <p>
+            I struggled in this space for quite a while, feeling a bit stuck
+            between building normal websites, but getting into of databases, and
+            the sleuth of new technologies there is to learn in connecting front
+            and backend.
+          </p>
+        </JourneyCard>
+
+        <JourneyCard
+          isTextRight={true}
+          techTags={["SCSS", "Tailwind", "Astro", "Typescript"]}
+          lineVariation="curve"
+        >
+          <p>
+            Astro was the framework I had been looking for. Building static
+            sites with a javascript framework, and possibility of adding React
+            was unbeatable to me.
+          </p>
+          <p>
+            Here I gained the confidence to learn Typescript and Tailwind and
+            much more.
+          </p>
+          <p>Astro has been my home base ever since.</p>
+        </JourneyCard>
+
+        <JourneyCard
+          isTextRight={false}
+          techTags={["Database", "Fullstack", "Auth"]}
+        >
+          <p>
+            In web development there's always another rabbit hole to dive into.
+          </p>
+          <p>
+            My next rabbit hole will likely be full-stack web development with
+            authentication and databases.
+          </p>
+        </JourneyCard>
+      </div>
+    </section>
+
+    <section class="mx-4 grid gap-16">
+      <article class="grid gap-8">
+        <Heading level="h2">How I Learn</Heading>
+        <article class="grid gap-4 md:grid-cols-2">
+          <div class="flex flex-col gap-4">
+            <p>
+              When you choose to live in China, you also choose to live with a
+              different internet than the rest of the world.
+            </p>
+            <p>
+              China has censored most of western media, social media and more.
+              This means that I'm dependent on a VPN to visit Google, YouTube,
+              Reddit, or where ever people go to learn and network in this
+              field.
+            </p>
+          </div>
+
+          <div class="flex flex-col gap-4">
+            <p>
+              While conditions have created more hurdles than most beginners
+              have to go through, it's the same conditions that has also
+              strengthened my views on performance, privacy, and unnecessarily
+              connecting to data with iframes or Google Fonts.
+            </p>
+          </div>
+        </article>
+      </article>
+
+      <section class="grid gap-4">
+        <Heading level="h3">Podcasts</Heading>
+        <ul class="flex flex-wrap justify-center gap-2">
+          <li>
+            <MediaCard title="Syntax" image={SyntaxCover} />
+          </li>
+          <li>
+            <MediaCard title="Dataklubben" image={DataklubbenCover} />
+          </li>
+          <li>
+            <MediaCard title="Darknet Diaries" image={DarknetDiariesCover} />
+          </li>
+          <li>
+            <MediaCard title="Compressed" image={CompressedCover} />
+          </li>
+          <li>
+            <MediaCard title="HTML All The Things" image={HtmlCover} />
+          </li>
+          <li>
+            <MediaCard title="Web Rush" image={WebRushCover} />
+          </li>
+          <li>
+            <MediaCard title="General Musings" image={GeneralMusingsCover} />
+          </li>
+        </ul>
+      </section>
+
+      <section class="grid gap-4">
+        <Heading level="h3">Youtube</Heading>
+        <ul class="flex flex-wrap justify-center gap-2">
+          <li>
+            <MediaCard title="Fireship" image={FireshipCover} />
+          </li>
+          <li>
+            <MediaCard title="Net Ninja" image={NetNinjaCover} />
+          </li>
+          <li>
+            <MediaCard title="Coding In Public" image={CodingInPublicCover} />
+          </li>
+          <li>
+            <MediaCard title="Kevin Powell" image={KevinPowellCover} />
+          </li>
+          <li>
+            <MediaCard title="Freecodecamp" image={FreeCodeCampCover} />
+          </li>
+          <li>
+            <MediaCard title="Network Chuck" image={NetworkChuckCover} />
+          </li>
+          <li>
+            <MediaCard
+              title="The Website Architect"
+              image={WebsiteArchitectCover}
+            />
+          </li>
+        </ul>
+      </section>
+
+      <section class="grid gap-4">
+        <Heading level="h3">Communities</Heading>
+        <ul class="flex flex-wrap justify-center gap-2">
+          <li>
+            <MediaCard title="Reddit" image={RedditIcon} />
+          </li>
+          <li>
+            <MediaCard title="Wechat" image={WechatIcon} />
+          </li>
+          <li>
+            <MediaCard title="Discord" image={DiscordIcon} />
+          </li>
+          <li>
+            <MediaCard title="DEV" image={DevIcon} />
+          </li>
+        </ul>
+      </section>
+    </section>
+  </main>
+</PageLayout>

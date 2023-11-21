@@ -1,0 +1,94 @@
+---
+import Accessibility from "../assets/images/icons/interests/AccessibilityIcon.astro";
+import AstroInterest from "../assets/images/icons/interests/AstroIcon.astro";
+import Coffee from "../assets/images/icons/interests/CoffeeIcon.astro";
+import Dog from "../assets/images/icons/interests/DogIcon.astro";
+import Food from "../assets/images/icons/interests/FoodIcon.astro";
+import Gaming from "../assets/images/icons/interests/GamingIcon.astro";
+import Languages from "../assets/images/icons/interests/LanguagesIcon.astro";
+import Movie from "../assets/images/icons/interests/MovieIcon.astro";
+import Privacy from "../assets/images/icons/interests/PrivacyIcon.astro";
+import Python from "../assets/images/icons/interests/PythonIcon.astro";
+import Tailwind from "../assets/images/icons/interests/TailwindIcon.astro";
+import Teaching from "../assets/images/icons/interests/TeachingIcon.astro";
+---
+
+<div class="interest-grid grid w-fit gap-2 place-self-center">
+  <Coffee class="[grid-area:coffee;]" />
+  <Gaming class="[grid-area:gaming;]" />
+  <Languages class="[grid-area:language;]" />
+  <Movie class="[grid-area:movie;]" />
+  <Privacy class="[grid-area:privacy;]" />
+  <Teaching class="[grid-area:teaching;]" />
+  <Dog class="[grid-area:dog;]" />
+  <Food class="[grid-area:food;]" />
+  <Accessibility class="[grid-area:ally;]" />
+  <Python class="[grid-area:python;]" />
+  <Tailwind class="[grid-area:tailwind;]" />
+  <AstroInterest class="[grid-area:astro;]" />
+</div>
+
+<style>
+  .interest-grid {
+    grid-template-areas:
+      ". coffee . gaming ."
+      "movie . astro . language"
+      ". python dog . tailwind"
+      "privacy . . teaching ."
+      ". food . . ally";
+  }
+</style>
+
+<script>
+  const idList = [
+    "coffee",
+    "gaming",
+    "languages",
+    "movies",
+    "privacy",
+    "teaching",
+    "dogs",
+    "food",
+    "a11y",
+    "python",
+    "tailwind",
+    "astro",
+  ];
+  const secondsPerInterval = 3;
+  let currentIndex: number;
+  let prevIndex: number;
+
+  const randInt = (max: number) => Math.floor(Math.random() * max);
+  const findCard = (index: number) => {
+    let card = document.getElementById(idList[index]);
+    return card;
+  };
+
+  const highlightCard = (card: HTMLElement) => {
+    // disable previous card
+    let prevCard = document.getElementById(idList[prevIndex]);
+    prevCard?.toggleAttribute("data-highlighted");
+
+    // highlight current card
+    card.toggleAttribute("data-highlighted");
+  };
+
+  let randomNum = randInt(idList.length);
+  currentIndex = randomNum;
+  let card = findCard(randomNum);
+  highlightCard(card!);
+
+  setInterval(() => {
+    // keep track of current and prev highlighted to the same card does get highlighted "twice"
+    prevIndex = currentIndex;
+
+    // infinite loop to prevent the random number is the same
+    while (currentIndex === prevIndex) {
+      let randomNum = randInt(idList.length);
+      currentIndex = randomNum;
+
+      let card = findCard(randomNum);
+      highlightCard(card!);
+    }
+  }, 1000 * secondsPerInterval);
+</script>

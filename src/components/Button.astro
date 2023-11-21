@@ -1,0 +1,25 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { twMerge } from "tailwind-merge";
+
+interface Props extends HTMLAttributes<"a"> {
+  type: "primary" | "secondary";
+}
+
+const { class: className, type, ...props } = Astro.props;
+---
+
+<a
+  class={twMerge(
+    "p-3 place-items-center flex justify-evenly gap-2 w-fit rounded-lg font-semibold transition-all border-2 border-transparent ",
+    type == "primary" &&
+      "bg-emerald-400 text-slate-950 hover:bg-transparent hover:border-emerald-400 hover:text-emerald-400",
+
+    type == "secondary" && " text-emerald-400 hover:bg-slate-800",
+
+    className,
+  )}
+  {...props}
+>
+  <slot />
+</a>

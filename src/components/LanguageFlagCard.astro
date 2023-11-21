@@ -1,0 +1,44 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { Image } from "astro:assets";
+import { twMerge } from "tailwind-merge";
+
+import DenmarkFlag from "../assets/images/icons/flags/DK.svg";
+import ChinaFlag from "../assets/images/icons/flags/CN.svg";
+import GreatBritainFlag from "../assets/images/icons/flags/GB.svg";
+import HongKongFlag from "../assets/images/icons/flags/HK.svg";
+
+interface Props extends HTMLAttributes<"div"> {
+  language: "Danish" | "Mandarin" | "English" | "Cantonese";
+}
+
+const { language, class: className, ...props } = Astro.props;
+
+const findFlagIcon = (language: string) => {
+  switch (language.toLowerCase()) {
+    case "danish":
+      return DenmarkFlag;
+    case "mandarin":
+      return ChinaFlag;
+    case "english":
+      return GreatBritainFlag;
+    case "cantonese":
+      return HongKongFlag;
+    default:
+      return DenmarkFlag;
+  }
+};
+---
+
+<div
+  class={twMerge("grid gap-2 justify-items-center p-2", className)}
+  {...props}
+>
+  <Image
+    src={findFlagIcon(language)}
+    alt={`${language} flag`}
+    quality={"low"}
+    class="w-24 rounded-lg object-center"
+  />
+  <p class="text-sm">{language}</p>
+</div>

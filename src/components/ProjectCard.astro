@@ -1,0 +1,52 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { Image } from "astro:assets";
+import { twMerge } from "tailwind-merge";
+import TechTag from "./TechTag.astro";
+
+interface Props extends HTMLAttributes<"a"> {
+  title: string;
+  description: string;
+  image: { src: ImageMetadata; alt: string };
+  stack: string[];
+  tags: string[];
+  viewTransitionName: string;
+}
+
+const { title, description, image, stack, tags, viewTransitionName, ...props } =
+  Astro.props;
+---
+
+<a
+  href={props.href}
+  class="group flex flex-col gap-4 rounded-lg border-2 border-emerald-900 p-4 shadow-emerald-800 transition-all hover:border-emerald-400 hover:bg-slate-900 hover:shadow-md hover:shadow-emerald-800"
+>
+  <div class="grid gap-4 sm:grid-cols-3">
+    <Image
+      src={image.src}
+      alt={image.alt}
+      class={twMerge(
+        "aspect-square object-cover max-h-32 place-self-center rounded-lg transition-all",
+        title === "ADHD Og Autisme Konsulent" && "object-left",
+      )}
+      transition:name={`${viewTransitionName}-img`}
+    />
+    <div class="flex flex-col gap-2 transition-all sm:col-span-2">
+      <h3
+        class="font-semibold text-neutral-100 transition-colors [text-wrap:balance]"
+        transition:name={`${viewTransitionName}-title`}
+      >
+        {title}
+      </h3>
+      <p class="text-sm">{description}</p>
+    </div>
+  </div>
+
+  <div class="flex flex-wrap gap-2">
+    {
+      stack.map((tech) => (
+        <TechTag {tech} size="xs" class="border-2 border-neutral-100/20" />
+      ))
+    }
+  </div>
+</a>

@@ -1,0 +1,97 @@
+---
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import PageLayout from "../layout/PageLayout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import InterestGrid from "../components/InterestGrid.astro";
+import TechTag from "../components/TechTag.astro";
+import Button from "../components/Button.astro";
+import Heading from "../components/Heading.astro";
+import ProfileImg from "../assets/images/coffee-yunnan.jpg";
+
+const skillTags = [
+  "HTML",
+  "CSS",
+  "Javascript",
+  "Typescript",
+  "React",
+  "Astro",
+  "Tailwind",
+  "SCSS",
+  "Sanity",
+  "Python",
+];
+const projects = await getCollection("projects");
+---
+
+<PageLayout>
+  <main>
+    <section class="mx-4 mt-12 grid gap-12 sm:gap-8 md:grid-cols-2">
+      <article class="flex flex-col gap-8 place-self-center">
+        <Heading level="h1">Hej, I'm Kristian</Heading>
+        <p class="[text-wrap: balance] max-w-[80%]">
+          I'm a frontend developer from Denmark who has been living in China for
+          the past decade.
+        </p>
+      </article>
+      <InterestGrid />
+    </section>
+
+    <article class="mx-4 mt-48 grid gap-8 md:grid-cols-2">
+      <article class="flex flex-col gap-8">
+        <Heading level="h2" class="sm:place-self-auto">About Me</Heading>
+        <div class="flex flex-col gap-4">
+          <p>
+            My name is Kristian, I'm from the tristate area in Denmark but I've
+            been living in Southern China for the past decade.
+          </p>
+          <p>
+            Beyond coding, I enjoy teaching Python and web development
+            fundamentals, where I focus on the real-world applications of
+            coding.
+          </p>
+        </div>
+        <Button href="/about" type="primary">More About Me</Button>
+      </article>
+      <Image
+        alt=""
+        src={ProfileImg}
+        class="aspect-video place-self-center rounded-lg object-cover object-center shadow-lg"
+      />
+    </article>
+
+    <section class="mx-4 mt-48 grid gap-8">
+      <Heading level="h2">Skills</Heading>
+      <div class="flex flex-wrap justify-center gap-4">
+        {
+          skillTags.map((skill) => (
+            <TechTag
+              tech={skill}
+              size="md"
+              class="w-24 flex-col border-2 border-emerald-800 hover:border-emerald-400 md:w-32"
+            />
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="mx-4 mt-48 grid gap-8">
+      <Heading level="h2">Projects</Heading>
+      <div class="grid gap-12 md:grid-cols-2">
+        {
+          projects.map((project) => (
+            <ProjectCard
+              title={project.data.title}
+              description={project.data.description}
+              href={`${Astro.url}projects/${project.slug}`}
+              stack={project.data.stack}
+              image={project.data.image}
+              tags={project.data.tags}
+              viewTransitionName={project.data.github}
+            />
+          ))
+        }
+      </div>
+    </section>
+  </main>
+</PageLayout>

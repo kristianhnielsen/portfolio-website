@@ -1,0 +1,78 @@
+---
+import Github from "../../assets/images/icons/contact/Github.astro";
+import LinkedIn from "../../assets/images/icons/contact/LinkedIn.astro";
+import Wechat from "../../assets/images/icons/contact/Wechat.astro";
+import NavLink from "./NavLink.astro";
+import { primaryNavigation, secondaryNavigation } from "./links";
+---
+
+<footer
+  class="mt-32 grid w-full gap-24 border-t-4 border-slate-800 bg-slate-900 p-8 md:grid-cols-3 md:bg-transparent"
+>
+  <address class="flex flex-col gap-4 not-italic md:col-span-2">
+    <p>I'm always up for a chat!</p>
+    <p>
+      <a
+        href="mailto:hello@kristiannielsen.com"
+        class="border-b-2 border-b-emerald-400 font-bold hover:text-neutral-100"
+        >Send me an e-mail</a
+      > or find me on social media.
+    </p>
+    <div class="flex gap-8">
+      <a
+        href="https://github.com/kristianhnielsen/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="fill-emerald-800 transition-all hover:fill-emerald-400"
+      >
+        <Github class="w-12 p-1" />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/kristian-hviid-nielsen/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="fill-emerald-800 transition-all hover:fill-emerald-400"
+      >
+        <LinkedIn class="w-12" />
+      </a>
+      <a
+        href="/wechat"
+        class="fill-emerald-800 transition-all hover:fill-emerald-400"
+      >
+        <Wechat class="w-12" />
+      </a>
+    </div>
+  </address>
+  <nav aria-label="Footer Navigation" class="grid w-fit gap-8">
+    <h2 class="font-bold text-neutral-100">Navigation</h2>
+    <ul
+      class="flex flex-col justify-center gap-4 border-b-2 border-slate-400 pb-4 text-sm"
+    >
+      {
+        // New links must be added in links.ts
+        primaryNavigation.map((link) => (
+          <li>
+            <NavLink class="text-slate-400" href={link.href}>
+              {link.text}
+            </NavLink>
+          </li>
+        ))
+      }
+    </ul>
+    <ul class="flex flex-col justify-center gap-4 text-xs">
+      {
+        // New links must be added in links.ts
+        secondaryNavigation.map((link) => (
+          <li>
+            <NavLink class="text-slate-400" href={link.href}>
+              {link.text}
+            </NavLink>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+  <p class="col-span-full place-self-center text-sm">
+    &copy; Copyright 2023 Kristian Hviid Nielsen
+  </p>
+</footer>

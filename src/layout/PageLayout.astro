@@ -1,0 +1,34 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import { twMerge } from "tailwind-merge";
+import MetaData from "../components/head/MetaData.astro";
+import Fonts from "../components/head/Fonts.astro";
+import Analytics from "../components/head/Analytics.astro";
+import NavigationBar from "../components/navigation/NavigationBar.astro";
+import Footer from "../components/navigation/Footer.astro";
+
+const { title, description, class: className } = Astro.props;
+---
+
+<html lang="en" class="scroll-smooth font-poppins">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <MetaData title={title} description={description} />
+    <Fonts />
+    <Analytics />
+    <ViewTransitions />
+  </head>
+  <body
+    class={twMerge(
+      "sm:max-w-screen-lg flex flex-col bg-slate-950 text-slate-400 lg:mx-auto mb-16",
+      className,
+    )}
+  >
+    <NavigationBar />
+    <slot />
+    <Footer />
+  </body>
+</html>
