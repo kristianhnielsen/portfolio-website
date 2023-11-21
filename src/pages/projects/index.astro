@@ -21,7 +21,7 @@ const projects = await getCollection("projects");
           <ProjectCard
             title={project.data.title}
             description={project.data.description}
-            href={`${Astro.url}/${project.slug}`}
+            href={`/projects/${project.slug}`}
             stack={project.data.stack}
             image={project.data.image}
             tags={project.data.tags}
