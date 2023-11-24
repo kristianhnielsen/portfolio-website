@@ -1,5 +1,4 @@
 ---
-import { ViewTransitions } from "astro:transitions";
 import { twMerge } from "tailwind-merge";
 import MetaData from "../components/head/MetaData.astro";
 import Fonts from "../components/head/Fonts.astro";
@@ -15,7 +14,6 @@ const { title, description, class: className } = Astro.props;
     <MetaData title={title} description={description} />
     <Fonts />
     <Analytics />
-    <ViewTransitions />
   </head>
   <body
     class={twMerge(
