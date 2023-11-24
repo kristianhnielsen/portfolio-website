@@ -23,10 +23,11 @@ const { Content } = await project.render();
 ---
 
 <PageLayout title={project.data.title} description={project.data.description}>
-  <main>
+  <main aria-label="Main content">
     <a
       href="/"
       class="group absolute left-4 top-4 z-10 grid rounded-full border-slate-950 bg-neutral-200/40 p-2 shadow transition-all hover:bg-neutral-100/60 hover:shadow-lg"
+      aria-label="Back button"
     >
       <BackArrow class="aspect-square w-8 stroke-slate-950" />
     </a>
@@ -38,7 +39,10 @@ const { Content } = await project.render();
         transition:name={`${viewTransitionName}-img`}
       />
     </div>
-    <div class="m-4 grid gap-4 border-b-2 border-slate-400 pb-4">
+    <div
+      class="m-4 grid gap-4 border-b-2 border-slate-400 pb-4"
+      aria-label="Header information"
+    >
       <Heading
         level="h1"
         class="text-neutral-100"
@@ -59,11 +63,12 @@ const { Content } = await project.render();
     <section class="m-4 flex flex-col-reverse gap-8 sm:grid sm:grid-cols-4">
       <article
         class="prose col-span-3 prose-h2:text-slate-200 prose-p:text-slate-400 prose-a:text-emerald-600"
+        aria-label="Description"
       >
         <Content />
       </article>
       <aside class="col-span-1 flex flex-col gap-8 sm:gap-16">
-        <section class="flex flex-col gap-4">
+        <section class="flex flex-col gap-4" aria-label="Made with">
           <Heading level="h2" applyGradient={false} class="text-xl">
             Made with
           </Heading>

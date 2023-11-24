@@ -11,14 +11,17 @@ import Person from "../assets/images/icons/contact/Person.astro";
   title="Contact"
   description="Want to get in touch? Find all the ways to Kristian Nielsen here."
 >
-  <main class="mx-4 mt-24 grid justify-center gap-8 md:grid-cols-2">
+  <main
+    class="mx-4 mt-24 grid justify-center gap-8 md:grid-cols-2"
+    aria-label="Main content"
+  >
     <div class="flex flex-col items-center gap-4">
       <Heading level="h1" class="">Contact</Heading>
       <p>Don't hesitate to contact me!</p>
     </div>
     <address class="grid gap-8 not-italic">
-      <ul class="flex flex-col gap-8">
-        <li>
+      <ul class="flex flex-col gap-8" aria-label="Contact information">
+        <li aria-label="Name">
           <p
             class="group flex items-center gap-4 transition-all hover:text-neutral-100"
           >
@@ -27,7 +30,7 @@ import Person from "../assets/images/icons/contact/Person.astro";
             />Kristian Hviid Nielsen
           </p>
         </li>
-        <li>
+        <li aria-label="E-mail">
           <a
             href="mailto:hello@kristiannielsen.com"
             class="group flex items-center gap-4 [word-break:break-word] hover:text-neutral-100"
@@ -36,7 +39,7 @@ import Person from "../assets/images/icons/contact/Person.astro";
             />hello@kristiannielsen.com</a
           >
         </li>
-        <li>
+        <li aria-label="Github">
           <a
             href="https://github.com/kristianhnielsen/"
             target="_blank"
@@ -47,7 +50,7 @@ import Person from "../assets/images/icons/contact/Person.astro";
             />@kristianhnielsen</a
           >
         </li>
-        <li>
+        <li aria-label="LinkedIn">
           <a
             href="https://www.linkedin.com/in/kristian-hviid-nielsen/"
             target="_blank"
