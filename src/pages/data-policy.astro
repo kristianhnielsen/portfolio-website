@@ -1,0 +1,46 @@
+---
+import Button from "../components/Button.astro";
+import Heading from "../components/Heading.astro";
+import PageLayout from "../layout/PageLayout.astro";
+---
+
+<PageLayout
+  title="Data Policy"
+  description="Kristiannielsen.com does not use cookies, and does not collect sensitive information about you when you visit the website."
+>
+  <main aria-label="Main content">
+    <article class="grid max-w-prose gap-4" aria-label="Data policy">
+      <Heading level="h1">Data Policy</Heading>
+      <p>
+        Kristiannielsen.com does not use cookies, and does not collect sensitive
+        information about you when you visit the website.
+      </p>
+      <p>
+        I use <a
+          href="https://plausible.io"
+          target="_blank"
+          rel="noopener noreferrer">Plausible Analytics</a
+        > which does not use cookies, and is in compliance with <a
+          href="https://gdpr.eu/what-is-gdpr/"
+          target="_blank"
+          rel="noopener noreferrer">GDPR</a
+        > and other data protection policies. I do not collect or store
+        sensitive data about you, and I'm not able to "follow" you across other
+        websites or devices.
+      </p>
+      <p>
+        In this connection, I'm not so interested in <em>who</em> you are, but
+        more curious as to how you spend your time on my website, and how I can
+        improve your experience on your next visit.
+      </p>
+      <Button
+        href="https://plausible.io/data-policy"
+        target="_blank"
+        rel="noopener noreferrer"
+        type="primary"
+      >
+        Read more about Plausible Analytics' data policy
+      </Button>
+    </article>
+  </main>
+</PageLayout>
