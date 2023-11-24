@@ -1,7 +1,11 @@
 ---
 title: Kristian Nielsen Web Development
 stack: [Astro, SCSS, HTML, Typescript]
-image: { src: ./images/kristian-nielsen-web-dev.jpg, alt: hi there }
+image:
+  {
+    src: ./images/kristian-nielsen-web-dev.jpg,
+    alt: Kristian Nielsen Web Development logo,
+  }
 github: https://github.com/kristianhnielsen/freelance-website-astro
 demo: https://freelance-website-astro.vercel.app
 description: Multilingual website for my freelance web development side-hustle.

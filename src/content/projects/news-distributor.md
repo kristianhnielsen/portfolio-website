@@ -1,7 +1,11 @@
 ---
 title: China News Distributor
 stack: [Python]
-image: { src: ./images/news-distributor.jpg, alt: hi there }
+image:
+  {
+    src: ./images/news-distributor.jpg,
+    alt: Python logo with a newspaper and the Chinese flag,
+  }
 github: https://github.com/kristianhnielsen/news-distributor
 description: Webscraper used to get gather and distribute news articles based on keywords.
 tags: [Webscraping, E-mail, Docx]

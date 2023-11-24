@@ -5,14 +5,14 @@ import PageLayout from "../layout/PageLayout.astro";
 import WechatQR from "../assets/images/wechatQR.jpg";
 ---
 
-<PageLayout>
+<PageLayout title="WeChat">
   <main class="grid place-items-center gap-8">
     <Heading level="h1">Wechat</Heading>
     <address class="grid place-items-center gap-4 not-italic">
       <p>Search for my ID: <strong>kristiannielsen</strong></p>
       <Image
         src={WechatQR}
-        alt=""
+        alt="QR code for WeChat"
         class="aspect-square max-w-xs place-self-center rounded"
       />
     </address>

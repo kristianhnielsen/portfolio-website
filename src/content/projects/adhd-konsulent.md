@@ -1,7 +1,12 @@
 ---
 title: ADHD Og Autisme Konsulent
 stack: [Astro, Tailwind, HTML, Typescript]
-image: { src: ./images/adhd-konsulent.jpg, alt: hi there }
+image:
+  {
+    src: ./images/adhd-konsulent.jpg,
+    alt: ADHD-Konsulent.dk logo on the left,
+    and profile on the right,
+  }
 github: https://github.com/kristianhnielsen/adhd-konsulent-astro
 demo: https://adhd-konsulent.dk
 description: ADHD-konsulent.dk is a website built with performance, accessibility and low-maintenance in mind.

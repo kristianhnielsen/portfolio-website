@@ -1,7 +1,11 @@
 ---
 title: Brew Masters
 stack: [Astro, Sanity, Tailwind, HTML, Typescript]
-image: { src: ./images/brew-masters.jpg, alt: hi there }
+image:
+  {
+    src: ./images/brew-masters.jpg,
+    alt: Astro and Sanity's logos connected by a diagonal line,
+  }
 github: https://github.com/kristianhnielsen/brew-masters
 demo: https://brew-masters.vercel.app/
 description: A website made with custom integration of Sanity.io headless content management system (CMS). Feel free to contact me for access to the CMS. See my blog post on the integration.

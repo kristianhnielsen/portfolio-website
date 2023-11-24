@@ -22,7 +22,7 @@ const viewTransitionName = project.data.title;
 const { Content } = await project.render();
 ---
 
-<PageLayout>
+<PageLayout title={project.data.title}>
   <main>
     <a
       href="/"
