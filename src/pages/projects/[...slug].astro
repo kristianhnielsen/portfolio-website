@@ -59,6 +59,14 @@ const { Content } = await project.render();
           ))
         }
       </div>
+      {
+        project.data.deprecated && (
+          <p class="rounded bg-amber-400 p-4 text-sm text-slate-950">
+            Warning! This code relies on external sources, and may require some
+            adjustments in order to work as intended.
+          </p>
+        )
+      }
     </div>
     <section class="m-4 flex flex-col-reverse gap-8 sm:grid sm:grid-cols-4">
       <article

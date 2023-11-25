@@ -5,6 +5,7 @@ image: { src: ./images/mytube.jpg, alt: MyTube logo }
 github: https://github.com/kristianhnielsen/mytube
 description: YouTube downloader with a GUI.
 tags: [GUI, PyInstaller]
+deprecated: true
 ---
 
 ## Description
