@@ -1,6 +1,7 @@
 ---
 import DesktopNavigation from "./DesktopNavigation.astro";
 import MobileNavigation from "./MobileNavigation.astro";
+import SkipToMain from "./SkipToMain.astro";
 
 // New links must be added in links.ts
 ---
@@ -10,6 +11,7 @@ import MobileNavigation from "./MobileNavigation.astro";
   transition:persist
   aria-label="Header"
 >
+  <SkipToMain />
   <a href="/" class="group w-12 transition-all" aria-label="Logo">
     <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
       <g clip-path="url(#clip0_152_77)">
