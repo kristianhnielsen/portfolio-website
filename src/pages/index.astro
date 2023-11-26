@@ -24,7 +24,9 @@ const skillTags = [
 
 const projects = (await getCollection("projects"))
   // Sort by order frontmatter value
-  .sort((a, b) => a.data.order.valueOf() - b.data.order.valueOf());
+  .sort((a, b) => a.data.order.valueOf() - b.data.order.valueOf())
+  // Get first 4 projects
+  .slice(0, 4);
 ---
 
 <PageLayout
@@ -100,6 +102,9 @@ const projects = (await getCollection("projects"))
           ))
         }
       </div>
+      <Button href="/projects" type="primary" class="place-self-center">
+        More projects
+      </Button>
     </section>
   </main>
 </PageLayout>
