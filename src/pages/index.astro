@@ -22,9 +22,9 @@ const skillTags = [
   "Python",
 ];
 
-const projects = (await getCollection("projects")).sort(
-  (a, b) => a.data.order.valueOf() - b.data.order.valueOf(),
-);
+const projects = (await getCollection("projects"))
+  // Sort by order frontmatter value
+  .sort((a, b) => a.data.order.valueOf() - b.data.order.valueOf());
 ---
 
 <PageLayout
