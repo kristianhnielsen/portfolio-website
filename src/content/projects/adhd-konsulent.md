@@ -21,7 +21,7 @@ A static website made for an ADHD and autism consultant, meant as a business car
 Given the target audience of the website, extra attention was given to accessibility both in design and technical accessibility.
 
 This is a redesign of the previous website. The previous website (also developed by me) was lacking content, an SPA made with React which was too inaccessible and way too overkill for what was needed.
-You're welcome to <a href="https://adhd-konsulent-v2.vercel.app/">visit the demo</a>, or see <a href="https://github.com/kristianhnielsen/adhd-konsulent-v2/">the source code</a>
+You're welcome to <a href="https://adhd-konsulent-v2.vercel.app/">visit the demo</a>, or see <a href="https://github.com/kristianhnielsen/adhd-konsulent-v2/">the source code</a>.
 
 The website is built with Astro v3, which comes with fully integrated View Transitions API allowing for a smoother page transitions.
 
