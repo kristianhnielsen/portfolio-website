@@ -15,6 +15,7 @@ const projectCollection = defineCollection({
       description: z.string().max(200, "Short description is too long"),
       tags: z.array(z.string()),
       deprecated: z.boolean().optional(),
+      order: z.number(),
     }),
 });
 
