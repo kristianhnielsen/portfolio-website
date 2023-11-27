@@ -12,7 +12,7 @@ const { title, class: className, ...props } = Astro.props;
 <div
   class={twMerge(
     "group flex flex-col w-12 md:w-16 lg:w-20 place-self-center origin-center transition-all p-2 md:px-4 md:pt-6 pb-2 md:rounded-3xl rounded-xl border-[1px] border-emerald-800 md:text-xs text-[.5rem] text-neutral-100 stroke-emerald-800 fill-transparent",
-    "hover:bg-slate-900 hover:scale-110 hover:shadow-md hover:shadow-emerald-400 hover:border-0 hover:p-4",
+    "hover:bg-slate-900 hover:scale-110 hover:shadow-md hover:shadow-emerald-400 hover:border-0 md:hover:p-4",
     "data-[highlighted]:bg-slate-900 data-[highlighted]:scale-110 data-[highlighted]:shadow-md data-[highlighted]:shadow-emerald-400 data-[highlighted]:border-0 md:data-[highlighted]:p-4",
     className,
   )}
