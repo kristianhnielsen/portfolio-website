@@ -1,9 +1,6 @@
 ---
 import { twMerge } from "tailwind-merge";
 import TechTag from "./TechTag.astro";
-import Database from "../assets/images/icons/tech/Database.astro";
-import CablesConnect from "../assets/images/icons/tech/CablesConnect.astro";
-import Auth from "../assets/images/icons/tech/Auth.astro";
 import SectionConnectLine from "./SectionConnectLine.astro";
 
 interface Props {
@@ -23,39 +20,13 @@ const { techTags, isTextRight, lineVariation, ...props } = Astro.props;
     )}
   >
     {
-      techTags.map((techTag) => {
-        switch (techTag) {
-          case "Database":
-            return (
-              <p class="anim-flip group flex w-fit flex-col items-center gap-2 rounded-lg border-2 border-emerald-800 p-2 text-center transition-all hover:border-emerald-400 hover:bg-slate-900 group-hover:text-neutral-100">
-                <Database class="aspect-square w-12 fill-none stroke-emerald-400 stroke-[1] px-2 text-xs transition-all group-hover:fill-emerald-400 group-hover:stroke-none md:w-24 md:text-sm" />
-                Databases
-              </p>
-            );
-          case "Fullstack":
-            return (
-              <p class="anim-flip group flex w-fit flex-col items-center gap-2 rounded-lg border-2 border-emerald-800 p-2 text-center transition-all hover:border-emerald-400 hover:bg-slate-900 group-hover:text-neutral-100">
-                <CablesConnect class="aspect-square w-12 fill-none stroke-emerald-400 stroke-[1] px-2 text-xs transition-all group-hover:fill-emerald-400 group-hover:stroke-none md:w-24 md:text-sm" />
-                Fullstack
-              </p>
-            );
-          case "Auth":
-            return (
-              <p class="anim-flip group flex w-fit flex-col items-center gap-2 rounded-lg border-2 border-emerald-800 p-2 text-center transition-all hover:border-emerald-400 hover:bg-slate-900 group-hover:text-neutral-100">
-                <Auth class="aspect-square w-12 fill-none stroke-emerald-400 stroke-[1] px-2 text-xs transition-all group-hover:fill-emerald-400 group-hover:stroke-none md:w-24 md:text-sm" />
-                Auth
-              </p>
-            );
-          default:
-            return (
-              <TechTag
-                size="lg"
-                tech={techTag}
-                class="flex-col border-2 border-emerald-800 hover:border-emerald-400 hover:bg-slate-900"
-              />
-            );
-        }
-      })
+      techTags.map((techTag) => (
+        <TechTag
+          size="lg"
+          tech={techTag}
+          class="flex-col border-2 border-emerald-800 hover:border-emerald-400 hover:bg-slate-900"
+        />
+      ))
     }
   </div>
   <div

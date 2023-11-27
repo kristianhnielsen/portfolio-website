@@ -20,6 +20,8 @@ import RPiIcon from "../assets/images/icons/tech/raspberry-pi.svg";
 import JavaIcon from "../assets/images/icons/tech/java.svg";
 import GodotIcon from "../assets/images/icons/tech/godot.svg";
 import GitIcon from "../assets/images/icons/tech/git.svg";
+import PostgresqlIcon from "../assets/images/icons/tech/postgresql.svg";
+import Auth0Icon from "../assets/images/icons/tech/auth0.svg";
 
 export interface Props extends HTMLAttributes<"div"> {
   tech:
@@ -40,9 +42,8 @@ export interface Props extends HTMLAttributes<"div"> {
     | "Godot"
     | "Git"
     | "Figma"
-    | "Database"
-    | "Auth"
-    | "Fullstack"
+    | "PostgreSQL"
+    | "Auth0"
     | string;
 
   size: "xs" | "sm" | "md" | "lg";
@@ -85,6 +86,10 @@ const findIcon = (tech: string) => {
       return FigmaIcon;
     case "node":
       return NodeIcon;
+    case "postgresql":
+      return PostgresqlIcon;
+    case "auth0":
+      return Auth0Icon;
     default:
       return HtmlIcon;
   }
@@ -93,7 +98,7 @@ const findIcon = (tech: string) => {
 
 <div
   class={twMerge(
-    "flex gap-2 p-2 rounded-lg text-center text-neutral-100 text-sm transition-all items-center w-fit",
+    "flex gap-2 p-2 rounded-lg text-center text-neutral-100 text-sm transition-all items-center w-24",
     size === "sm" && "text-xs",
     size === "xs" && "text-xs",
     size === "lg" && "text-xs md:text-sm",
