@@ -7,6 +7,18 @@ module.exports = {
       fontFamily: {
         poppins: ["Poppins"],
       },
+      animation: {
+        orbit: "orbit 10s linear infinite",
+        fadeOut: "fadeOut 2s linear",
+      },
+      keyframes: {
+        orbit: {
+          "100%": { rotate: "1turn" },
+        },
+        fadeOut: {
+          "100%": { opacity: "0", scale: "0" },
+        },
+      },
     },
   },
   plugins: [

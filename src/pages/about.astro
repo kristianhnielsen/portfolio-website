@@ -31,6 +31,7 @@ import RedditIcon from "../assets/images/icons/tech/reddit.svg";
 import DiscordIcon from "../assets/images/icons/tech/discord.svg";
 import WechatIcon from "../assets/images/icons/tech/wechat.svg";
 import DevIcon from "../assets/images/icons/tech/dev.png";
+import Orbit from "../components/Orbit.astro";
 ---
 
 <PageLayout
@@ -71,9 +72,9 @@ import DevIcon from "../assets/images/icons/tech/dev.png";
       </div>
     </section>
 
-    <article class="mx-4 grid gap-8" aria-label="Teaching">
-      <Heading level="h2">Teaching</Heading>
-      <article class="grid gap-8 md:grid-cols-2">
+    <article class="mx-4 grid gap-8 md:grid-cols-2" aria-label="Teaching">
+      <article class="flex flex-col justify-center gap-4">
+        <Heading level="h2">Teaching</Heading>
         <div class="flex flex-col items-center gap-4 text-slate-400">
           <p>
             I teach Python and web development fundamentals, where my main focus
@@ -84,8 +85,8 @@ import DevIcon from "../assets/images/icons/tech/dev.png";
             the real world as fast as possible.
           </p>
         </div>
-        <TeachingIcon class="w-32 text-base sm:w-32 md:w-32 lg:w-32" />
       </article>
+      <Orbit />
     </article>
 
     <section class="mx-4 grid gap-8" aria-label="My coding journey">

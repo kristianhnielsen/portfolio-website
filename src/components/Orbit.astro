@@ -1,0 +1,38 @@
+---
+import JavascriptIcon from "../assets/images/icons/tech/javascript.svg";
+import HtmlIcon from "../assets/images/icons/tech/html.svg";
+import CssIcon from "../assets/images/icons/tech/css.svg";
+import PythonIcon from "../assets/images/icons/tech/python.svg";
+import OrbitObject from "./OrbitObject.astro";
+import Chalkboard from "../assets/images/icons/interests/Chalkboard.astro";
+---
+
+<div class="group relative my-48 grid place-content-center">
+  <Chalkboard
+    class="aspect-square w-24 rounded-full fill-emerald-400 p-2 shadow-md shadow-emerald-400"
+  />
+  <ul class="absolute grid aspect-square w-24 place-self-center">
+    <OrbitObject
+      orbitAnimationDuration="[animation-duration:12s]"
+      icon={PythonIcon}
+      class="right-10"
+    />
+
+    <OrbitObject
+      orbitAnimationDuration="[animation-duration:17s]"
+      icon={CssIcon}
+      class="right-24"
+    />
+    <OrbitObject
+      orbitAnimationDuration="[animation-duration:17s]"
+      icon={HtmlIcon}
+      class="left-40 top-10"
+    />
+
+    <OrbitObject
+      orbitAnimationDuration="[animation-duration:30s]"
+      icon={JavascriptIcon}
+      class="right-36"
+    />
+  </ul>
+</div>

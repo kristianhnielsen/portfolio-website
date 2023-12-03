@@ -1,0 +1,84 @@
+---
+import { twMerge } from "tailwind-merge";
+import { Image } from "astro:assets";
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"div"> {
+  icon: ImageMetadata;
+  orbitAnimationDuration: string;
+}
+
+const { icon, class: className, orbitAnimationDuration } = Astro.props;
+---
+
+<li
+  class={twMerge(
+    "absolute aspect-square w-full",
+    "animate-[orbit_1s_linear_infinite]",
+    orbitAnimationDuration,
+  )}
+>
+  <div
+    class={twMerge(
+      "relative aspect-square w-10 grid place-items-center",
+      "animate-[orbit_1s_linear_infinite_reverse]",
+      orbitAnimationDuration,
+      className,
+    )}
+    id="orbit-object"
+  >
+    <Image src={icon} alt="" class="w-full object-cover" />
+  </div>
+</li>
+
+<script>
+  let iconSize = 40;
+  const orbitObjs = document.querySelectorAll("#orbit-object");
+
+  function getCoords(elem: Element) {
+    let box = elem.getBoundingClientRect();
+
+    return {
+      top: box.top + window.pageYOffset,
+      left: box.left + window.pageXOffset,
+    };
+  }
+
+  const createTrailElement = (positionX: number, positionY: number) => {
+    let trailElement = document.createElement("span");
+    trailElement.classList.add(
+      "w-1",
+      "aspect-square",
+      "rounded-full",
+      "bg-white",
+      "absolute",
+      "block",
+      "animate-fadeOut",
+      "-z-10",
+    );
+
+    // set trail element position to orbit elements position
+    // + half of icon size (px) to set position at center of icon
+    trailElement.style.left = `${positionX}px`;
+    trailElement.style.top = `${positionY}px`;
+
+    // delete element on animation end
+    trailElement.onanimationend = () => trailElement.remove();
+    return trailElement;
+  };
+
+  window.setInterval(() => {
+    orbitObjs.forEach((orbitElement) => {
+      let orbitElementCoordinates = getCoords(orbitElement);
+      // add half of icon size (px) to set position at center of icon
+      let trailElementPositionX = orbitElementCoordinates.left + iconSize / 2;
+      let trailElementPositionY = orbitElementCoordinates.top + iconSize / 2;
+
+      let trailElement = createTrailElement(
+        trailElementPositionX,
+        trailElementPositionY,
+      );
+      document.body.appendChild(trailElement);
+    });
+  }, 30);
+</script>
