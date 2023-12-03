@@ -14,14 +14,14 @@ const { icon, class: className, orbitAnimationDuration } = Astro.props;
 <li
   class={twMerge(
     "absolute aspect-square w-full",
-    "animate-[orbit_1s_linear_infinite]",
+    "motion-safe:animate-[orbit_1s_linear_infinite]",
     orbitAnimationDuration,
   )}
 >
   <div
     class={twMerge(
       "relative aspect-square w-10 grid place-items-center",
-      "animate-[orbit_1s_linear_infinite_reverse]",
+      "motion-safe:animate-[orbit_1s_linear_infinite_reverse]",
       orbitAnimationDuration,
       className,
     )}
@@ -34,6 +34,9 @@ const { icon, class: className, orbitAnimationDuration } = Astro.props;
 <script>
   let iconSize = 40;
   const orbitObjs = document.querySelectorAll("#orbit-object");
+  const getReducedMotionSetting = () => {
+    return window.matchMedia("(prefers-reduced-motion)").matches;
+  };
 
   function getCoords(elem: Element) {
     let box = elem.getBoundingClientRect();
@@ -68,17 +71,21 @@ const { icon, class: className, orbitAnimationDuration } = Astro.props;
   };
 
   window.setInterval(() => {
-    orbitObjs.forEach((orbitElement) => {
-      let orbitElementCoordinates = getCoords(orbitElement);
-      // add half of icon size (px) to set position at center of icon
-      let trailElementPositionX = orbitElementCoordinates.left + iconSize / 2;
-      let trailElementPositionY = orbitElementCoordinates.top + iconSize / 2;
+    const isReducedMotionEnabled = getReducedMotionSetting();
 
-      let trailElement = createTrailElement(
-        trailElementPositionX,
-        trailElementPositionY,
-      );
-      document.body.appendChild(trailElement);
-    });
+    if (!isReducedMotionEnabled) {
+      orbitObjs.forEach((orbitElement) => {
+        let orbitElementCoordinates = getCoords(orbitElement);
+        // add half of icon size (px) to set position at center of icon
+        let trailElementPositionX = orbitElementCoordinates.left + iconSize / 2;
+        let trailElementPositionY = orbitElementCoordinates.top + iconSize / 2;
+
+        let trailElement = createTrailElement(
+          trailElementPositionX,
+          trailElementPositionY,
+        );
+        document.body.appendChild(trailElement);
+      });
+    }
   }, 30);
 </script>

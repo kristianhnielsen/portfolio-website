@@ -7,32 +7,32 @@ import OrbitObject from "./OrbitObject.astro";
 import Chalkboard from "../assets/images/icons/interests/Chalkboard.astro";
 ---
 
-<div class="group relative my-48 grid place-content-center">
+<div class="relative my-48 grid place-content-center">
   <Chalkboard
     class="aspect-square w-24 rounded-full fill-emerald-400 p-2 shadow-md shadow-emerald-400"
   />
   <ul class="absolute grid aspect-square w-24 place-self-center">
     <OrbitObject
-      orbitAnimationDuration="[animation-duration:12s]"
+      orbitAnimationDuration="motion-safe:[animation-duration:12s]"
       icon={PythonIcon}
       class="right-10"
     />
 
     <OrbitObject
-      orbitAnimationDuration="[animation-duration:17s]"
+      orbitAnimationDuration="motion-safe:[animation-duration:17s]"
       icon={CssIcon}
-      class="right-24"
+      class="right-10 top-32"
     />
     <OrbitObject
-      orbitAnimationDuration="[animation-duration:17s]"
+      orbitAnimationDuration="motion-safe:[animation-duration:17s]"
       icon={HtmlIcon}
       class="left-40 top-10"
     />
 
     <OrbitObject
-      orbitAnimationDuration="[animation-duration:30s]"
+      orbitAnimationDuration="motion-safe:[animation-duration:30s]"
       icon={JavascriptIcon}
-      class="right-36"
+      class="-top-36 left-12"
     />
   </ul>
 </div>
