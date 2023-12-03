@@ -18,7 +18,7 @@ interface Props {
 const { title, description } = Astro.props;
 
 const formatTitle = (title: string) =>
-  title === undefined ? name : `${name} | ${title}`;
+  title === undefined ? name : `${title} | ${name}`;
 
 const ensureTrailingSlash = (url: string | URL) =>
   url.toString().replace(/\/$/, "") + "/";
