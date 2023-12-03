@@ -38,7 +38,7 @@ const { icon, class: className, orbitAnimationDuration } = Astro.props;
     return window.matchMedia("(prefers-reduced-motion)").matches;
   };
 
-  const getCoords = (elem: Element) => {
+  const getCoordinates = (elem: Element) => {
     let box = elem.getBoundingClientRect();
 
     return {
@@ -75,7 +75,7 @@ const { icon, class: className, orbitAnimationDuration } = Astro.props;
 
     if (!isReducedMotionEnabled) {
       orbitObjs.forEach((orbitElement) => {
-        let orbitElementCoordinates = getCoords(orbitElement);
+        let orbitElementCoordinates = getCoordinates(orbitElement);
         // add half of icon size (px) to set position at center of icon
         let trailElementPositionX = orbitElementCoordinates.left + iconSize / 2;
         let trailElementPositionY = orbitElementCoordinates.top + iconSize / 2;
