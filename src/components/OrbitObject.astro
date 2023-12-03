@@ -38,14 +38,14 @@ const { icon, class: className, orbitAnimationDuration } = Astro.props;
     return window.matchMedia("(prefers-reduced-motion)").matches;
   };
 
-  function getCoords(elem: Element) {
+  const getCoords = (elem: Element) => {
     let box = elem.getBoundingClientRect();
 
     return {
       top: box.top + window.pageYOffset,
       left: box.left + window.pageXOffset,
     };
-  }
+  };
 
   const createTrailElement = (positionX: number, positionY: number) => {
     let trailElement = document.createElement("span");
