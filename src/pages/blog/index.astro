@@ -1,0 +1,39 @@
+---
+import PageLayout from "../../layout/PageLayout.astro";
+import Heading from "../../components/Heading.astro";
+
+import { getCollection } from "astro:content";
+import BlogPostCard from "../../components/BlogPostCard.astro";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.published.valueOf() - a.data.published.valueOf(),
+);
+---
+
+<PageLayout title="Blog" description="Kristian Nielsen's blog posts.">
+  <main
+    class="mx-4 mt-12 grid gap-16 sm:grid-cols-3"
+    id="main-content"
+    aria-label="Main content"
+  >
+    <div>
+      <Heading level="h1">Blog</Heading>
+      <p>This is where I think out loud and note things down for future me.</p>
+    </div>
+
+    <ul class="grid gap-8 sm:col-span-2" aria-label="Projects list">
+      {
+        posts.map((post) => (
+          <li>
+            <BlogPostCard
+              description={post.data.description}
+              title={post.data.title}
+              image={post.data.image}
+              href={`blog/${post.slug}`}
+            />
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</PageLayout>
