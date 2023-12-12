@@ -3,7 +3,10 @@ title: "Decoding URLs: A Quick Guide To Website Addresses"
 description: Discover the elements of URLs that shape your web browsing experience. We look into what information is in a URL, making it easier for you to understand where a link is taking you before you click it.
 published: 2023-06-05
 image:
-  { src: "./images/decoding-urls.png", alt: "Ones and zeros fades into a url" }
+  {
+    src: "./images/decoding-urls/decoding-urls.png",
+    alt: "Ones and zeros fades into a url",
+  }
 ---
 
 Uniform Resource Locators (URLs) are what we use to tell the computer where we want to go. While the principle of URLs also somewhat apply to how you find your files on your computer, there are a few more elements in the network URLs you will find when browsing the web.
@@ -68,7 +71,7 @@ In recent years, more and more types of TLDs have become popular to finetune you
 - **.wiki** for informational websites
 - **.kids** for kid-friendly content
 
-<img src="https://images.unsplash.com/photo-1530406472580-81dc39c4babe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1692&q=12" alt="view from dark tunnel through an open gate to a grassy sunlit field" style="width: 100%; object-fit: cover; max-height: 500px;" />
+![view from dark tunnel through an open gate to a grassy sunlit field](./images/decoding-urls/tunnel.jpg)
 
 ### Port
 
@@ -164,7 +167,7 @@ Practice being aware of the URLs, change them if you need to, and browse the web
   }
   
   .params {
-    color:#4e7683;
+    color:#4ec683;
   }
 
   .fragment {

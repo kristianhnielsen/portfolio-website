@@ -4,18 +4,18 @@ description: A guide for integrating Sanity.io headless CMS into a frontend proj
 published: 2023-07-16
 image:
   {
-    src: "./images/sanity-in-astro.jpg",
+    src: "./images/getting-started-with-sanity-in-astro/sanity-astro.jpg",
     alt: "A banner with Astro and Sanity's logos",
   }
 ---
 
-🚀Astro and Sanity are both excellent solutions in their own right; <a href="https://astro.build/" target="_blank" class="external-link">Astro</a> being a beginner-friendly Javascript framework, primarily focusing on building static websites by default. <a href="https://www.sanity.io/" class="external-link" target="_blank">Sanity.io</a> is a Content Management System (CMS) with a generous free tier.
+🚀Astro and Sanity are both excellent solutions in their own right; <a href="https://astro.build/" target="_blank" rel="noopener noreferrer">Astro</a> being a beginner-friendly Javascript framework, primarily focusing on building static websites by default. <a href="https://www.sanity.io/" rel="noopener noreferrer" target="_blank">Sanity.io</a> is a Content Management System (CMS) with a generous free tier.
 
 In this guide we'll be using Astro and Sanity to build a functional blog, with an additional challenge at the end to let you practice what you've learned.
 
-I'll cover how to setup Astro and Sanity, and link the two, as well as how to fetch data from the <a href="https://www.sanity.io/docs/datastore" class="external-link">Sanity Content Lake</a>.
+I'll cover how to setup Astro and Sanity, and link the two, as well as how to fetch data from the <a href="https://www.sanity.io/docs/datastore" rel="noopener noreferrer">Sanity Content Lake</a>.
 
-If you're interested in seeing a project made with Astro and Sanity, I have made a <a href="https://coffee-demo.vercel.app" class="external-link" target="_blank">live demo site</a>. Visit the <a href="https://github.com/kristianhnielsen/coffee-demo" class="external-link" target="_blank">Github repo</a>, if you're interested diving into the code.
+If you're interested in seeing a project made with Astro and Sanity, I have made a <a href="https://coffee-demo.vercel.app" rel="noopener noreferrer" target="_blank">live demo site</a>. Visit the <a href="https://github.com/kristianhnielsen/coffee-demo" rel="noopener noreferrer" target="_blank">Github repo</a>, if you're interested diving into the code.
 
 ### Table of content
 
@@ -38,9 +38,9 @@ If you're interested in seeing a project made with Astro and Sanity, I have made
 
 The use of Sanity are separated into two aspects; one is Sanity Studio where you can edit content from Sanity's so-called Content Lake. The other is the Sanity client. The Sanity client is a working with Astro to fetch data from the Content Lake at build time.
 
-To start with, we need to sign up to your account on <a href="https://www.sanity.io/" class="external-link" target="_blank">Sanity.io</a>.
+To start with, we need to sign up to your account on <a href="https://www.sanity.io/" rel="noopener noreferrer" target="_blank">Sanity.io</a>.
 
-<img src="/assets/blog/sanity-astro/sanity-landing-page.png">
+![](./images/getting-started-with-sanity-in-astro/sanity-landing-page.png)
 
 Once you have created an account, we can jump into our code editor.
 
@@ -65,7 +65,7 @@ npm create sanity@latest -- --template blog --dataset production --visibility pu
 
 If this is your first time using Sanity, you'll be asked to login with Google, Github or e-mail.
 
-<img src="/assets/blog/sanity-astro/terminal-login.png">
+![](./images//getting-started-with-sanity-in-astro//terminal-login.png)
 
 Go ahead and create a new project. Once the install is done, you can check out the project at <a href="http://localhost:3333" target="_blank">http://localhost:3333/</a> with
 
@@ -179,7 +179,7 @@ To begin with you can think of it as conditional(s) in the square brackets `[]`,
 
 You can test your GROQ queries in your Sanity Studio Vision tools.
 
-I recommend that you have a look at Sanity's <a href="https://www.sanity.io/docs/query-cheat-sheet" class="external-link" target="_blank">GROQ cheat sheet</a>.
+I recommend that you have a look at Sanity's <a href="https://www.sanity.io/docs/query-cheat-sheet" rel="noopener noreferrer" target="_blank">GROQ cheat sheet</a>.
 
 ## Card Slug and Date
 
@@ -285,7 +285,7 @@ const { title, publishedAt, body, image } = page;
 
 ## Portable Text
 
-Let's start by adding the body text. The body is saved as <a href="https://www.sanity.io/docs/presenting-block-text" class="external-link" target="_blank">Portable Text</a>, this allows the text to keep the information about formatting etc. from the text editor in Sanity Studio.
+Let's start by adding the body text. The body is saved as <a href="https://www.sanity.io/docs/presenting-block-text" rel="noopener noreferrer" target="_blank">Portable Text</a>, this allows the text to keep the information about formatting etc. from the text editor in Sanity Studio.
 
 To use Portable Text in Astro is fairly simple:
 
@@ -325,11 +325,11 @@ const { title, publishedAt, body, image } = page;
 </article>
 ```
 
-Tip: If you use Tailwind, you can style Portable Text with the <a href="https://tailwindcss.com/docs/typography-plugin" class="external-link" target="_blank">Typography Plugin</a>.
+Tip: If you use Tailwind, you can style Portable Text with the <a href="https://tailwindcss.com/docs/typography-plugin" rel="noopener noreferrer" target="_blank">Typography Plugin</a>.
 
 ## Images
 
-To add images we need to use the image builder from Sanity's <a href="https://www.sanity.io/docs/image-url" class="external-link">image url package</a>
+To add images we need to use the image builder from Sanity's <a href="https://www.sanity.io/docs/image-url" rel="noopener noreferrer">image url package</a>
 
 ```shell
 npm install @sanity/image-url
@@ -438,7 +438,7 @@ const { title, publishedAt, body, image, authorName } = page;
 
 ## Deployment
 
-To deploy an server-side rendered Astro project, you need to add an adapter to your project. Luckily, this is _very_ easy! <a href="https://astro.build/integrations?search=&categories%5B%5D=adapters" target="_blank" class="external-link">Find your adapter</a> and install with
+To deploy an server-side rendered Astro project, you need to add an adapter to your project. Luckily, this is _very_ easy! <a href="https://astro.build/integrations?search=&categories%5B%5D=adapters" target="_blank" rel="noopener noreferrer">Find your adapter</a> and install with
 
 ```shell
 npx astro add [adapter-name]
@@ -448,11 +448,11 @@ npx astro add [adapter-name]
 
 All that's left to do is access management to the Sanity Studio if you are building a site for someone else, you may wish to give them the ability to use Sanity Studio, so they can easily create new blog posts, authors, or whatever documents and fields you have made.
 
-You can give access as Viewer, Editor or Administrator, or make your own roles. To give access, go to <a href="https://sanity.io/manage" target="_blank" class="external-link">Sanity's Project Management</a> and invite a user by typing their e-mail.
+You can give access as Viewer, Editor or Administrator, or make your own roles. To give access, go to <a href="https://sanity.io/manage" target="_blank" rel="noopener noreferrer">Sanity's Project Management</a> and invite a user by typing their e-mail.
 
 ## Conclusion
 
-🎉**Congratulations!**🎉
+🎉**Congratulations!** 🎉
 
 If you followed along, you should have a functional main page (`pages/index.astro`) with an overview of all the blog posts.
 You have individual pages (`pages/[...slug].astro`) for each blog post with images, regular text strings, dates, and Portable Text.
@@ -463,5 +463,5 @@ Now that you know how to build the foundation, I recommend that you add styling,
 
 **As an additional challenge, you can take what we've made in this tutorial, and make dynamically generated pages for each author.**
 
-If you need inspiration or help, I have made a <a href="https://brew-masters.vercel.app" class="external-link" target="_blank">live demo site</a>.
+If you need inspiration or help, I have made a <a href="https://brew-masters.vercel.app" rel="noopener noreferrer" target="_blank">live demo site</a>.
 Visit the <a href="projects/brew-masters" target="_blank">project page</a>, if you're interested diving into the code.

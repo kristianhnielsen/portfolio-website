@@ -4,7 +4,7 @@ description: Learn about what a website actually is, why it is important for com
 published: 2023-03-12
 image:
   {
-    src: "./images/what-is-a-website.png",
+    src: "./images/what-is-a-website/what-is-a-website.png",
     alt: "Browser icons and question marks",
   }
 ---
@@ -27,7 +27,7 @@ Websites are most often made with 3 types of files: HTML, CSS and Javascript.
 
 **Javascript** is a programming language that websites can use when something needs to change, for example that a red button turns green when you press it.
 
-<img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1934&q=12" alt="servers a lot of lights and different colored cables">
+![Servers a lot of lights and different colored cables](./images/what-is-a-website/server.jpg)
 
 ## Why have a website?
 

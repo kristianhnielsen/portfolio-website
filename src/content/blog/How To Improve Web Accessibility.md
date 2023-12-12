@@ -4,7 +4,7 @@ description: We go over what accessibility is, how you can benefit from it, and 
 published: 2023-05-16
 image:
   {
-    src: "./images/how-to-improve-accessibility.png",
+    src: "./images/how-to-improve-accessibility/how-to-improve-accessibility.png",
     alt: "Forward-leaning wheelchair user as if in high speed",
   }
 ---
@@ -15,19 +15,19 @@ Making website content accessible means that all users can access with or withou
 
 ## Why should I care?
 
-<a href="https://www.who.int/en/news-room/fact-sheets/detail/disability-and-health" class="external-link" target="_blank">16% of the world population experience significant disability</a>, and the <a href="https://webaim.org/projects/million/" class="external-link" target="_blank">WebAIM Million report</a> examined the home pages of the top 1 million websites and it was discovered that 96.3% of them failed to adhere to the most basic accessibility guidelines.
+<a href="https://www.who.int/en/news-room/fact-sheets/detail/disability-and-health" rel="noopener noreferrer" target="_blank">16% of the world population experience significant disability</a>, and the <a href="https://webaim.org/projects/million/" rel="noopener noreferrer" target="_blank">WebAIM Million report</a> examined the home pages of the top 1 million websites and it was discovered that 96.3% of them failed to adhere to the most basic accessibility guidelines.
 
 You can miss out on a lot of potential visitors if your website is inaccessible! In addition, making your website more accessible increases Search Engine Optimisation and user experience for everyone.
 
 Not making a website accessible because it takes too long and not impacting the majority of users, is the same as saying "_it takes too much time to check grammar, spelling, and proof-read a document_". The process of designing and developing a website _should_ include web accessibility as a natural step alongside considerations for performance, style, and responsiveness for mobile devices.
 
-Web accessibility may be somewhat invisible and seems more like an add-on feature, until the legal systemgets involved. Numerous regulations may call for a website to be accessible, and both <a href="https://www.nad.org/2011/06/16/nad-files-disability-civil-rights-lawsuit-against-netflix/" class="external-link" target="_blank">Netflix</a> and <a href="https://www.cnbc.com/2019/10/07/dominos-supreme-court.html" class="external-link" target="_blank">Dominos</a> have been the target of lawsuits.
+Web accessibility may be somewhat invisible and seems more like an add-on feature, until the legal systemgets involved. Numerous regulations may call for a website to be accessible, and both <a href="https://www.nad.org/2011/06/16/nad-files-disability-civil-rights-lawsuit-against-netflix/" rel="noopener noreferrer" target="_blank">Netflix</a> and <a href="https://www.cnbc.com/2019/10/07/dominos-supreme-court.html" rel="noopener noreferrer" target="_blank">Dominos</a> have been the target of lawsuits.
 
 ## So what can I do?
 
 ### Alternative Text
 
-In fact, missing alternative text, also known as _alt text_ for images is <a href="https://webaim.org/projects/million/" class="external-link" target="_blank">one of the biggest accessibility issues</a>.
+In fact, missing alternative text, also known as _alt text_ for images is <a href="https://webaim.org/projects/million/" rel="noopener noreferrer" target="_blank">one of the biggest accessibility issues</a>.
 
 Alternative text can be a quick and easy way to add accessibility to images.
 
@@ -37,20 +37,13 @@ Alternative text is added on the `<img>` element, and if the image fails to load
 <div style="max-width: 40%">
 
 **Image found, alt text not showing:** </br>
-<img
-  src="/assets/blog/how-to-improve-web-accessibility/coffee-cat.png"
-  alt="Cute cat wearing a beanie, holding cup of coffee"
-  title="Cat holding cup of coffee"
-/>
+![Cute cat wearing a beanie, holding cup of coffee](./images/how-to-improve-accessibility/coffee-cat.png)
 
 </div>
 <div style="max-width: 40%">
 
 **Image not found, alt text is showing:** </br>
-<img
-  src="/assets/blog/how-to-improve-web-accessibility/alt-text-example.png"
-  alt="Sample of alt text visible to the user"
-/>
+![Sample of alt text visible to the user](./images/how-to-improve-accessibility/alt-text-example.png)
 
 </div>
 </div>
@@ -77,9 +70,9 @@ HTML already has a lot of descriptive elements that comes with built-in function
 
 Using HTML to semantically describe an elements position, function, or context, also greatly improves SEO performance, as well as code readability.
 
-This could be as simple as using the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header" class="external-link" target="_blank">`<header>`</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer" class="external-link" target="_blank">`<footer>`</a> elements to properly describe where the content is located on the page.
+This could be as simple as using the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header" rel="noopener noreferrer" target="_blank">`<header>`</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer" rel="noopener noreferrer" target="_blank">`<footer>`</a> elements to properly describe where the content is located on the page.
 
-The <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details" class="external-link" target="_blank">`<details>`</a> element for dropdown accordions:
+The <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details" target="_blank" rel="noopener noreferrer">`<details>`</a> element for dropdown accordions:
 
 <div style="margin: 30px 0;">
 
@@ -112,7 +105,7 @@ The <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details" 
 </details>
 ```
 
-The <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/output" class="external-link" target="_blank">`<output>`</a> element is a container element into which a site or app can inject the results of a calculation or the outcome of a user action:
+The <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/output" target="_blank" rel="noopener noreferrer">`<output>`</a> element is a container element into which a site or app can inject the results of a calculation or the outcome of a user action:
 
 <div style="margin: 30px 0;">
 
@@ -142,7 +135,7 @@ The <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/output" c
 </form>
 ```
 
-or more descriptive elements like <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/address" class="external-link" target="_blank">`<address>`</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time" class="external-link" target="_blank">`<time>`</a>.
+or more descriptive elements like <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/address" target="_blank" rel="noopener noreferrer">`<address>`</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time" target="_blank" rel="noopener noreferrer">`<time>`</a>.
 
 ### Color Contrast
 
@@ -154,22 +147,21 @@ To ensure good color contrast, accessibility guidelines recommend a minimum cont
 <div style="max-width: 40%">
 
 **High contrast** - contrast ratio 7.26
-
-<img src="/assets/blog/how-to-improve-web-accessibility/high-contrast.png" alt="high contrast background/foreground with sample text"/>
+![high contrast background/foreground with sample text](./images/how-to-improve-accessibility/high-contrast.png)
 
 </div>
 
 <div style="max-width: 40%">
 
 **Low contrast** - contrast ratio 1.00
+![low contrast background/foreground with sample text](./images/how-to-improve-accessibility/low-contrast.png)
 
-<img src="/assets/blog/how-to-improve-web-accessibility/low-contrast.png" alt="low contrast background/foreground with sample text"/>
 </div>
 </div>
 
 Most browsers come with a built-in contrast checking tool. In Chrome and Firefox you can find it by opening the developer tools (`Ctrl + Shift + i`), and click the element inspector at the top (`Ctrl + Shift + C`). Now you can hover the cursor anywhere on any website and see the contrast ratio.
 
-If you are trying to pick a color and wish to see the contrast, I like to use <a href="https://colourcontrast.cc/" class="external-link" target="_blank">Colour Contrast Checker</a>.
+If you are trying to pick a color and wish to see the contrast, I like to use <a href="https://colourcontrast.cc/" target="_blank" rel="noopener noreferrer">Colour Contrast Checker</a>.
 
 ### Tabbing
 
@@ -177,7 +169,7 @@ _Tabbing_ means being able to select clickable elements like links and buttons o
 
 This is easy to test yourself, as you can go to any website and press tab through the website yourself. You’ll quickly notice if there are elements that are meant to be clicked, but doesn’t get selected.
 
-<img src="https://images.unsplash.com/photo-1574887427561-d3d5d58c9273?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=12" alt="Hands on a braille screen reader" style="margin: 30px 0;"/>
+![Hands on a braille screen reader](./images/how-to-improve-accessibility/braille-keyboard.jpg)
 
 You can make any element focusable by adding a **`tabindex=0`** attribute value to it. That will add the element to the list of elements that can be focused. However, if you use HTML semantically, you will rarely have to use this, as `<a>` and `<button>` are already focusable.
 
@@ -238,15 +230,15 @@ An example of a skip element could look like this:
 
 If you’d like some more tools to improve web accessibility, here are some tools and resources:
 
-- <a href="https://wave.webaim.org/" target="_blank" class="external-link">WAVE</a> can identify many accessibility and Web Content Accessibility Guideline (WCAG) errors, but also facilitates human evaluation of web content.
+- <a href="https://wave.webaim.org/" target="_blank" rel="noopener noreferrer">WAVE</a> can identify many accessibility and Web Content Accessibility Guideline (WCAG) errors, but also facilitates human evaluation of web content.
 
-- <a href="https://www.deque.com/axe/" target="_blank" class="external-link">aXe Devtools</a> is powerful and accurate accessibility toolkit can get you to 80% issue coverage, or more, during development.
+- <a href="https://www.deque.com/axe/" target="_blank" rel="noopener noreferrer">aXe Devtools</a> is powerful and accurate accessibility toolkit can get you to 80% issue coverage, or more, during development.
 
-- W3’s <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank" class="external-link">Web Content Accessibility Guidelines (WCAG)</a> international standard.
+- W3’s <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank" rel="noopener noreferrer">Web Content Accessibility Guidelines (WCAG)</a> international standard.
 
-- W3’s <a href="https://www.w3.org/WAI/policies/" target="_blank" class="external-link">list of governmental policies</a> related to web accessibility.
+- W3’s <a href="https://www.w3.org/WAI/policies/" target="_blank" rel="noopener noreferrer">list of governmental policies</a> related to web accessibility.
 
-- <a href="https://www.nvaccess.org/download/" target="_blank" class="external-link">NVDA</a> software allows blind and vision impaired people to access and interact with the Windows operating system and many third party applications.
+- <a href="https://www.nvaccess.org/download/" target="_blank" rel="noopener noreferrer">NVDA</a> software allows blind and vision impaired people to access and interact with the Windows operating system and many third party applications.
 
 ## Conclusion
 

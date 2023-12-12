@@ -4,7 +4,7 @@ description: If you're a beginner Python developer wondering where to go next, c
 published: 2023-03-25
 image:
   {
-    src: "./images/python-beyond-the-basics.png",
+    src: "./images/beyond-the-basics-with-python/python-beyond-the-basics.png",
     alt: "Python icon with a green arrow up",
   }
 ---
@@ -43,7 +43,7 @@ Consider using the following modules:
 - `bs4` (BeautifulSoup4) Parses HTML.
 - `selenium` Launches and controls a web browser. This is particularly useful for webpages that are client-side rendered with `Javascipt`.The selenium module is also able to fill in forms and simulate mouse clicks in this browser.
 
-<img src="https://images.unsplash.com/photo-1600463241302-88b0e1a51175?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=12" alt="spider web with blurred green forrest background">
+![Spider web with blurred green forrest background](./images/beyond-the-basics-with-python/spider-web.jpg)
 
 ### GUI
 
