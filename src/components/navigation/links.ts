@@ -10,6 +10,7 @@ export const primaryNavigation: NavigationLink[] = [
   { text: "Home", href: "/" },
   { text: "About", href: "/about" },
   { text: "Projects", href: "/projects" },
+  { text: "Blog", href: "/blog" },
   { text: "Contact", href: "/contact", cta: true },
 ];
 
