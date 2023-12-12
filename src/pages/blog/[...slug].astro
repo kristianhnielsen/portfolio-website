@@ -1,0 +1,52 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import BackArrow from "../../assets/images/icons/BackArrow.astro";
+import Heading from "../../components/Heading.astro";
+import PageLayout from "../../layout/PageLayout.astro";
+import { Image } from "astro:assets";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+const post = Astro.props as CollectionEntry<"blog">;
+const { Content } = await post.render();
+---
+
+<PageLayout title={post.data.title} description={post.data.description}>
+  <a
+    href="/"
+    class="group absolute left-4 top-4 z-10 grid rounded-full border-slate-950 bg-neutral-200/40 p-2 shadow transition-all hover:bg-neutral-100/60 hover:shadow-lg"
+    aria-label="Back button"
+  >
+  </a>
+  <main aria-label="Main content" id="main-content">
+    <div class="mx-2 mt-4">
+      <Image
+        src={post.data.image.src}
+        alt={post.data.image.alt}
+        class="max-h-80 w-full rounded-lg object-cover"
+      />
+    </div>
+    <div
+      class="m-4 grid gap-4 border-b-2 border-slate-400 pb-4"
+      aria-label="Blog title"
+    >
+      <Heading level="h1" class="text-neutral-100" applyGradient={false}>
+        {post.data.title}
+      </Heading>
+    </div>
+    <section class="m-4 flex">
+      <article
+        class="prose-cold-slate prose prose-code:before:content-[''] prose-code:after:content-['']"
+        aria-label="Content"
+      >
+        <Content />
+      </article>
+    </section>
+    <a href="http://" target="_blank" rel="noopener noreferrer"></a>
+  </main>
+</PageLayout>
