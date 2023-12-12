@@ -17,12 +17,6 @@ const { Content } = await post.render();
 ---
 
 <PageLayout title={post.data.title} description={post.data.description}>
-  <a
-    href="/"
-    class="group absolute left-4 top-4 z-10 grid rounded-full border-slate-950 bg-neutral-200/40 p-2 shadow transition-all hover:bg-neutral-100/60 hover:shadow-lg"
-    aria-label="Back button"
-  >
-  </a>
   <main aria-label="Main content" id="main-content">
     <div class="mx-2 mt-4">
       <Image
@@ -39,9 +33,9 @@ const { Content } = await post.render();
         {post.data.title}
       </Heading>
     </div>
-    <section class="m-4 flex">
+    <section class="m-4 flex justify-center">
       <article
-        class="prose-cold-slate prose prose-code:before:content-[''] prose-code:after:content-['']"
+        class="prose prose-cold-slate prose-code:before:content-[''] prose-code:after:content-['']"
         aria-label="Content"
       >
         <Content />

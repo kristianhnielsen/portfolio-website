@@ -23,13 +23,6 @@ const { Content } = await project.render();
 ---
 
 <PageLayout title={project.data.title} description={project.data.description}>
-  <a
-    href="/"
-    class="group absolute left-4 top-4 z-10 grid rounded-full border-slate-950 bg-neutral-200/40 p-2 shadow transition-all hover:bg-neutral-100/60 hover:shadow-lg"
-    aria-label="Back button"
-  >
-    <BackArrow class="aspect-square w-8 stroke-slate-950" />
-  </a>
   <main aria-label="Main content" id="main-content">
     <div class="mx-2 mt-4">
       <Image
