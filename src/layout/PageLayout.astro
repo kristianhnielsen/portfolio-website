@@ -5,6 +5,7 @@ import Fonts from "../components/head/Fonts.astro";
 import Analytics from "../components/head/Analytics.astro";
 import NavigationBar from "../components/navigation/NavigationBar.astro";
 import Footer from "../components/navigation/Footer.astro";
+import { ViewTransitions } from "astro:transitions";
 
 const { title, description, class: className } = Astro.props;
 ---
@@ -14,6 +15,7 @@ const { title, description, class: className } = Astro.props;
     <MetaData title={title} description={description} />
     <Fonts />
     <Analytics />
+    <ViewTransitions />
   </head>
   <body
     class={twMerge(
