@@ -4,6 +4,7 @@ import BackArrow from "../../assets/images/icons/BackArrow.astro";
 import Heading from "../../components/Heading.astro";
 import PageLayout from "../../layout/PageLayout.astro";
 import { Image } from "astro:assets";
+import Button from "../../components/Button.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
@@ -35,10 +36,13 @@ const { Content } = await post.render();
     </div>
     <section class="m-4 flex justify-center">
       <article
-        class="prose prose-cold-slate prose-code:before:content-[''] prose-code:after:content-['']"
+        class="prose prose-cold-slate prose-code:max-w-full prose-code:before:content-[''] prose-code:after:content-['']"
         aria-label="Content"
       >
         <Content />
+        <Button href="#main-content" type="secondary" class="mt-16">
+          To Top &uarr;
+        </Button>
       </article>
     </section>
   </main>
