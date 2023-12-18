@@ -9,8 +9,6 @@ image:
   }
 ---
 
-## Introduction
-
 In today's digital world, having a website is no longer a luxury but a necessity for businesses and individuals alike. However, if you're new to the online realm, you may wonder what a website is and what makes it so crucial in today's landscape.
 
 In this article, we'll explore the ins and outs of a website, from its definition to its significance, as well as give a taste of how to make a website from scratch.

@@ -116,7 +116,7 @@ You can try this fragment link: <a href="#second-level-domain-sld">Go to SLD</a>
 
 A fragment in the URL doesn't change the content of a page like what parameters or subpage/paths do.
 
-## Conclusion
+## Wrapping Up
 
 By gaining an understanding of the components of a URL, you become a savvy online navigator.
 With this knowledge you can better distinguish between secure and unsecure links, lowering the risks of falling victim to malicious intent, and allows you to see if the link is taking you where the link text tells you it's going.

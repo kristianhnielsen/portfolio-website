@@ -9,8 +9,6 @@ image:
   }
 ---
 
-## Introduction
-
 If you're reading this post, chances are you're already familiar with the fundamentals of Python. Maybe you've gone through a beginner tutorial or two, may be wondering what to learn next.
 
 In this blog post, we'll explore some valuable skills that you can learn with Python, beyond the beginner level. From file management to webscraping, GUI development, and executable file creation, we'll provide you with some practical ideas on where to start and how to evolve your skills. By the end of this post, you'll have a better understanding of the various skills you can learn with Python and how they can help you advance your career or personal projects. So let's dive in and explore some of the valuable skills you can learn with Python!
@@ -57,6 +55,6 @@ Sharing your projects with other people can be challenging if they are not techn
 
 Get started with the `PyInstaller` module.
 
-## Conclusion
+## Wrapping Up
 
 Learning new skills as a Python developer is crucial for enhancing your abilities and advancing your career. The skills mentioned in this blog post are all practical and valuable for any Python developer to learn. By mastering these skills, you can increase your efficiency, gather valuable data, showcase your projects to a wider audience, and even monetize your work. So, embrace the rabbit hole, and don't be afraid to dive in and explore, to become a better Python developer.

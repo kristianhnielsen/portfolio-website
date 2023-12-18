@@ -240,6 +240,6 @@ If you’d like some more tools to improve web accessibility, here are some tool
 
 - <a href="https://www.nvaccess.org/download/" target="_blank" rel="noopener noreferrer">NVDA</a> software allows blind and vision impaired people to access and interact with the Windows operating system and many third party applications.
 
-## Conclusion
+## Wrapping Up
 
 While it’s impossible to 100% web accessibility, you can take some basic steps to make your website a little more accessible to the benefit of all your users. Making your website accessible to all users is not only the right thing to do, it's also good for business. Hopefully more businesses will realize this, making web accessibility an increasingly natural part of design, planning, and development for the internet, making a huge difference to a not-so-small minority of users. Until then, you can reaps the rewards of having an accessible website and outmatch your competitor.
