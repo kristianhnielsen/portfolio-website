@@ -19,20 +19,20 @@ If you're interested in seeing a project made with Astro and Sanity, I have made
 
 ### Table of content
 
-- <a href="#sanity-studio">Sanity Studio</a>
-- <a href="#astro">Astro</a>
-- <a href="#server-side-rendering">Server-Side Rendering in Astro</a>
-- <a href="#sanity-client">Sanity client</a>
-- <a href="#groq">GROQ</a>
-- <a href="#card-slug-and-date">Card Slug and Date</a>
-- <a href="#dynamically-generated-pages">Dynamically Generated Pages</a>
-- <a href="#images">Images</a>
-- <a href="#portable-text">Portable Text</a>
-- <a href="#author-name">Author Name</a>
-- <a href="#deployment">Deployment</a>
-- <a href="#sanity-account-management">Sanity Account Management</a>
-- <a href="#conclusion">Conclusion</a>
-- <a href="#where-to-go-from-here">Where to go from here?</a>
+- [Sanity Studio](#sanity-studio)
+- [Astro](#astro)
+- [Server-Side Rendering in Astro](#server-side-rendering)
+- [Sanity client](#sanity-client)
+- [GROQ](#groq)
+- [Card Slug and Date](#card-slug-and-date)
+- [Dynamically Generated Pages](#dynamically-generated-pages)
+- [Images](#images)
+- [Portable Text](#portable-text)
+- [Author Name](#author-name)
+- [Deployment](#deployment)
+- [Sanity Account Management](#sanity-account-management)
+- [Wrapping Up](#wrapping-up)
+- [Where to go from here?](#where-to-go-from-here)
 
 ## Sanity Studio
 
@@ -450,7 +450,7 @@ All that's left to do is access management to the Sanity Studio if you are build
 
 You can give access as Viewer, Editor or Administrator, or make your own roles. To give access, go to <a href="https://sanity.io/manage" target="_blank" rel="noopener noreferrer">Sanity's Project Management</a> and invite a user by typing their e-mail.
 
-## Conclusion
+## Wrapping Up
 
 🎉**Congratulations!** 🎉
 
