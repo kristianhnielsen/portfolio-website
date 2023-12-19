@@ -1,0 +1,35 @@
+---
+interface Props {
+  headline: string;
+  description: string;
+  image: {
+    src: {
+      src: string;
+      width: number;
+      height: number;
+      format: "png" | "jpg" | "jpeg" | "tiff" | "webp" | "gif" | "svg" | "avif";
+    };
+    alt: string;
+  };
+  publishingDate: Date;
+}
+
+const { headline, description, image, publishingDate } = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: headline,
+  description: description,
+  image: new URL(image.src.src, Astro.url),
+  author: {
+    "@type": "Person",
+    name: "Kristian Nielsen",
+    url: "https://www.linkedin.com/in/kristian-hviid-nielsen/",
+    email: "mailto:hello@kristiannielsen.com",
+  },
+  datePublished: publishingDate,
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

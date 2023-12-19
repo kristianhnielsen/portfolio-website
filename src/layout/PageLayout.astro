@@ -6,14 +6,49 @@ import Analytics from "../components/head/Analytics.astro";
 import NavigationBar from "../components/navigation/NavigationBar.astro";
 import Footer from "../components/navigation/Footer.astro";
 import { ViewTransitions } from "astro:transitions";
+import StructuredData from "../components/head/StructuredData.astro";
 
-const { title, description, image, class: className } = Astro.props;
+interface Props {
+  title: string;
+  description: string;
+  image?: {
+    src: {
+      src: string;
+      width: number;
+      height: number;
+      format: "png" | "jpg" | "jpeg" | "tiff" | "webp" | "gif" | "svg" | "avif";
+    };
+    alt: string;
+  };
+  hasStructuredData?: boolean;
+  publishingDate: Date;
+  class?: string;
+}
+
+const {
+  title,
+  description,
+  image,
+  hasStructuredData,
+  publishingDate,
+  class: className,
+} = Astro.props;
 ---
 
 <html lang="en" class="scroll-p-24 scroll-smooth font-poppins">
   <head>
     <MetaData title={title} description={description} image={image} />
     <Fonts />
+    {
+      hasStructuredData && image && (
+        <StructuredData
+          publishingDate={publishingDate}
+          headline={title}
+          description={description}
+          image={image}
+        />
+      )
+    }
     <Analytics />
     <ViewTransitions />
   </head>
