@@ -7,12 +7,12 @@ import NavigationBar from "../components/navigation/NavigationBar.astro";
 import Footer from "../components/navigation/Footer.astro";
 import { ViewTransitions } from "astro:transitions";
 
-const { title, description, class: className } = Astro.props;
+const { title, description, image, class: className } = Astro.props;
 ---
 
 <html lang="en" class="scroll-p-24 scroll-smooth font-poppins">
   <head>
-    <MetaData title={title} description={description} />
+    <MetaData title={title} description={description} image={image} />
     <Fonts />
     <Analytics />
     <ViewTransitions />
