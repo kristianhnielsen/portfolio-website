@@ -22,7 +22,11 @@ const viewTransitionName = project.data.title;
 const { Content } = await project.render();
 ---
 
-<PageLayout title={project.data.title} description={project.data.description}>
+<PageLayout
+  title={project.data.title}
+  description={project.data.description}
+  image={project.data.image}
+>
   <main aria-label="Main content" id="main-content">
     <div class="mx-2 mt-4">
       <Image
