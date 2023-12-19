@@ -37,7 +37,6 @@ const ensureTrailingSlash = (url: string | URL) =>
   url.toString().replace(/\/$/, "") + "/";
 ---
 
-<!-- Metadata -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -50,7 +49,6 @@ const ensureTrailingSlash = (url: string | URL) =>
   {formatTitle(title)}
 </title>
 
-<!-- OpenGraph Tags -->
 <meta property="og:title" content={formatTitle(title)} />
 <meta property="og:type" content={type} />
 <meta property="og:url" content={ensureTrailingSlash(canonicalURL)} />
@@ -60,7 +58,6 @@ const ensureTrailingSlash = (url: string | URL) =>
 <meta property="og:image" content={formatImgSrc(image.src.src)} />
 <meta property="og:image:alt" content={image.alt} />
 
-<!-- Twitter Tags -->
 <meta name="twitter:card" content={"summary_large_image"} />
 <meta name="twitter:title" content={formatTitle(title)} />
 <meta name="twitter:description" content={description} />
