@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        poppins: ["Poppins"],
+        poppins: ["Poppins", "system-ui", "sans-serif"],
       },
       animation: {
         orbit: "orbit 10s linear infinite",
