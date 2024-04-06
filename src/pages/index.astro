@@ -7,7 +7,7 @@ import InterestGrid from "../components/InterestGrid.astro";
 import TechTag from "../components/TechTag.astro";
 import Button from "../components/Button.astro";
 import Heading from "../components/Heading.astro";
-import ProfileImg from "../assets/images/coffee-yunnan.jpg";
+import ProfileImg from "../assets/images/profile.png";
 
 const skillTags = [
   "HTML",
@@ -66,9 +66,9 @@ const projects = (await getCollection("projects"))
         </Button>
       </article>
       <Image
-        alt="Profile of Kristian with a cup of coffee with a building with asian architecture in the background"
+        alt="Profile of Kristian"
         src={ProfileImg}
-        class="aspect-video place-self-center rounded-lg object-cover object-center shadow-lg"
+        class="-scale-x-100 place-self-center rounded-lg shadow-lg"
       />
     </article>
 
