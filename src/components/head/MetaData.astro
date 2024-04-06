@@ -31,7 +31,7 @@ const formatImgSrc = (src: string) => {
 };
 
 const formatTitle = (title: string) =>
-  title === undefined ? name : `${title} | ${name}`;
+  title === "" ? name : `${title} | ${name}`;
 
 const ensureTrailingSlash = (url: string | URL) =>
   url.toString().replace(/\/$/, "") + "/";
