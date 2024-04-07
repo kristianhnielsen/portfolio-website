@@ -22,6 +22,7 @@ import GodotIcon from "../assets/images/icons/tech/godot.svg";
 import GitIcon from "../assets/images/icons/tech/git.svg";
 import PostgresqlIcon from "../assets/images/icons/tech/postgresql.svg";
 import Auth0Icon from "../assets/images/icons/tech/auth0.svg";
+import SupabaseIcon from "../assets/images/icons/tech/supabase.svg";
 
 export interface Props extends HTMLAttributes<"div"> {
   tech:
@@ -44,6 +45,7 @@ export interface Props extends HTMLAttributes<"div"> {
     | "Figma"
     | "PostgreSQL"
     | "Auth0"
+    | "Supabase"
     | string;
 
   size: "xs" | "sm" | "md" | "lg";
@@ -90,6 +92,8 @@ const findIcon = (tech: string) => {
       return PostgresqlIcon;
     case "auth0":
       return Auth0Icon;
+    case "supabase":
+      return SupabaseIcon;
     default:
       return HtmlIcon;
   }
@@ -102,7 +106,7 @@ const findIcon = (tech: string) => {
     size === "sm" && "text-xs",
     size === "xs" && "text-xs",
     size === "lg" && "text-xs md:text-sm",
-    className,
+    className
   )}
   {...props}
 >
@@ -114,7 +118,7 @@ const findIcon = (tech: string) => {
       size === "xs" && "w-4",
       size === "sm" && "w-8",
       size === "md" && "w-12",
-      size === "lg" && "w-8 sm:w-16",
+      size === "lg" && "w-8 sm:w-16"
     )}
   />
   <p>
