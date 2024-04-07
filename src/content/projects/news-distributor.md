@@ -10,7 +10,7 @@ github: https://github.com/kristianhnielsen/news-distributor
 description: Webscraper used to get gather and distribute news articles based on keywords.
 tags: [Webscraping, E-mail, Docx]
 deprecated: true
-order: 4
+order: 3
 ---
 
 ## Description

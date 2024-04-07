@@ -6,7 +6,7 @@ github: https://github.com/kristianhnielsen/portfolio-website
 demo: https://kristiannielsen.com
 description: Portfolio website
 tags: [Website, Portfolio, Blog]
-order: 1
+order: 6
 ---
 
 ## Description

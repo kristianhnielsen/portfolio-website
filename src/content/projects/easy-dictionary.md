@@ -10,7 +10,7 @@ github: https://github.com/kristianhnielsen/easy-dictionary
 demo: https://easy-dictionary.com
 description: A Chinese-English dictionary with mini games for language learning and memorization.
 tags: [Web app, Dictionary, Language learning]
-order: 1
+order: 7
 ---
 
 ## Description

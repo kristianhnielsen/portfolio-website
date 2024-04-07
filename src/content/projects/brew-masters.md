@@ -10,7 +10,7 @@ github: https://github.com/kristianhnielsen/brew-masters
 demo: https://brew-masters.vercel.app/
 description: A website made with custom integration of Sanity.io headless content management system (CMS). Feel free to contact me for access to the CMS. See my blog post on the integration.
 tags: [Website, Content Management System, Server-Side Rendered]
-order: 3
+order: 4
 ---
 
 ## Description

@@ -6,7 +6,7 @@ github: https://github.com/kristianhnielsen/mytube
 description: YouTube downloader with a GUI.
 tags: [GUI, PyInstaller]
 deprecated: true
-order: 6
+order: 1
 ---
 
 ## Description

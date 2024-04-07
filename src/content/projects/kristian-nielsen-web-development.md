@@ -10,7 +10,7 @@ github: https://github.com/kristianhnielsen/freelance-website-astro
 demo: https://freelance-website-astro.vercel.app
 description: Multilingual website for my freelance web development side-hustle.
 tags: [Website, Blog]
-order: 5
+order: 2
 ---
 
 ## Description
