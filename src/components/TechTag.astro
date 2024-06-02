@@ -23,6 +23,10 @@ import GitIcon from "../assets/images/icons/tech/git.svg";
 import PostgresqlIcon from "../assets/images/icons/tech/postgresql.svg";
 import Auth0Icon from "../assets/images/icons/tech/auth0.svg";
 import SupabaseIcon from "../assets/images/icons/tech/supabase.svg";
+import DotNetIcon from "../assets/images/icons/tech/dotnet.svg";
+import AuthIcon from "../assets/images/icons/tech/auth.svg";
+import CSharpIcon from "../assets/images/icons/tech/csharp.svg";
+import SQLIcon from "../assets/images/icons/tech/database.svg";
 
 export interface Props extends HTMLAttributes<"div"> {
   tech:
@@ -46,6 +50,10 @@ export interface Props extends HTMLAttributes<"div"> {
     | "PostgreSQL"
     | "Auth0"
     | "Supabase"
+    | "SQL"
+    | "C#"
+    | ".NET"
+    | "Auth"
     | string;
 
   size: "xs" | "sm" | "md" | "lg";
@@ -94,6 +102,14 @@ const findIcon = (tech: string) => {
       return Auth0Icon;
     case "supabase":
       return SupabaseIcon;
+    case ".net":
+      return DotNetIcon;
+    case "c#":
+      return CSharpIcon;
+    case "sql":
+      return SQLIcon;
+    case "auth":
+      return AuthIcon;
     default:
       return HtmlIcon;
   }
